@@ -48,8 +48,8 @@ background-img: "../img/intro-bg.png"
 ##############################
 
 dynamic-typing: True
-shuffle: True # Shuffle the lines.
-loop: True
+shuffle: false # Shuffle the lines.
+loop: false
 loop-count: False # Set False for infinite loop, or set any number for finite loop.
 type-speed: 10
 start-delay: 200
@@ -93,12 +93,12 @@ email-share: True
 fb-share: True
 twitter-share: True
 linkedin-share: True
-reddit-share: True
+reddit-share: False
 google-plus-share: True
-tumblr-share: True
-pinterest-share: True
-pocket-share: True
-vkontakte-share: True
+tumblr-share: False
+pinterest-share: False
+pocket-share: False
+vkontakte-share: False
 
 disqus-shortname: "public-vrock"
 
@@ -108,15 +108,15 @@ syntax-highlight: True
 # Timeline #
 ############
 
-events:
-  - image: "/img/timeline/spidertocat.png"
-    date: "March 2016 - Today"
-    description: "Started with github pages"
+#events:
+#  - image: "/img/timeline/spidertocat.png"
+#    date: "March 2016 - Today"
+#    description: "Started with github pages"
 
 
 # First image of the Timeline
 
-timeline-img: "/img/timeline/default.png"
+#timeline-img: "/img/timeline/default.png"
 
 ###########
 # Contact #
@@ -151,7 +151,7 @@ social:
 pages_list:
   About: 'about'
   Blog: 'latest-post'
-  Timeline: 'timeline'
+  # Timeline: 'timeline'
   Contact: 'contact'
 
 # Exclusion list from the generated _site

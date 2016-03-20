@@ -123,10 +123,6 @@
             </li>
           
             <li>
-              <a class="page-scroll" href="#timeline"> Timeline </a>
-            </li>
-          
-            <li>
               <a class="page-scroll" href="#contact"> Contact </a>
             </li>
           
@@ -283,83 +279,6 @@ If you want to have a static message in your intro layout, disable the dynamic-t
         
       
         
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-<!-- Timeline Start -->
-
-<section id="timeline" class="container content-section text-center">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-
-      <h2 id="timeline">Timeline</h2>
-
-
-      <ul class="timeline">
-
-        
-          
-          
-
-          <li class="
-          
-          ">
-            <div class="timeline-image">
-              <img class="img-circle img-responsive" src="/img/timeline/spidertocat.png" alt="">
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4>March 2016 - Today</h4>
-              </div>
-              <div class="timeline-body">
-                <p>Started with github pages</p>
-
-              </div>
-            </div>
-          </li>
-        
-
-        <li class="timeline-inverted">
-          <div class="timeline-image">
-            <img class="img-circle img-responsive" src="/img/timeline/default.png" alt="">
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Timeline End -->
-
-        
-      
-        
-      
-        
-      
-    
-      
-        
-      
-        
-      
-        
           
 <!-- Contact Start -->
 
@@ -368,8 +287,6 @@ If you want to have a static message in your intro layout, disable the dynamic-t
     <div class="col-md-10 col-md-offset-1">
 
       <h2 id="contact">Contact</h2>
-
-<p>Drop me an email if you are interested in me coding for you or saving your neighborhood!</p>
 
 
       
@@ -530,15 +447,13 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
   }
 
   
-    shuffle(myQuotes)
-  
 
     $(".intro-text").typed({
       strings: myQuotes,
       typeSpeed: 10,
       backDelay: 5000,
       startDelay: 200,
-      loop: true,
+      loop: false,
       loopCount: false,
       cursorChar: "|"
     });
