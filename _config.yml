@@ -3,7 +3,7 @@ title: vrock
 subtitle: by Tobias Geiser
 email: youremailaddress@gmail.com
 description: Welcome to the new home of vrock.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.vrock.ch" # the base hostname & protocol for your site
 author:
 street_address: Streettest 123
