@@ -1,9 +1,9 @@
 ---
 layout: home
 title: Home
-landing-title: 'Hi, my name is Forty'
+landing-title: 'Climb like a monkey, resist like a rock'
 description: null
-image: null
+image: assets/images/profile_picture_symbol_small.png
 author: null
 ---
 
