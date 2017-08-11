@@ -3,7 +3,7 @@ layout: home
 title: Home
 landing-title: 'Climb like a monkey, resist like a rock'
 description: null
-image: assets/images/profile_picture_symbol_small.png
+image: assets/images/profile_picture_symbol_small_white.png
 author: null
 ---
 
