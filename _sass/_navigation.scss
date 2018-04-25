@@ -1,0 +1,17 @@
+.floating-menu {
+    padding: 5px;;
+    width: 80px;
+    z-index: 100;
+    position: fixed;
+    bottom: 120px;
+    right: 0px;
+    background-color: transparent;
+  }
+
+  .floating-menu a, 
+  .floating-menu h3 {
+    font-size: 0.9em;
+    display: block;
+    margin: 0 0.5em;
+    color: black;
+  }

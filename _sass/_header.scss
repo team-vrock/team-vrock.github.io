@@ -1,0 +1,140 @@
+
+#particles-js {
+  display: flex;
+  vertical-align: bottom;
+  width: 100%;
+  min-height: 100vh;
+  background: {
+      image: url(img/background.jpg);
+      repeat: no-repeat;
+      size: cover;
+      attachment: fixed;
+  }
+}
+
+.logo {
+  width: 300px;
+  height: 334px;
+  background: {
+      image: url(img/logo.png);
+      repeat: no-repeat;
+      size: 300px 334px;
+  }
+  background-color: transparent;
+}
+
+
+.header {
+  z-index: 1;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:#FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  .site-title {
+    font-size: 50px;
+    display: block;
+    line-height: 1;
+    color: #FFF;
+    @media only screen and (min-width:$cut){
+      margin: 0;
+      font-size: 100px;
+    }
+  }
+  .site-description {
+    font-size: 20px;
+    display: block;
+    line-height: 1;
+    color: #FFF;
+    margin-top: 10px;
+    @media only screen and (min-width:$cut){
+      font-size: 40px;
+    }
+  }
+}
+
+.header-links {
+  margin: 10px;
+  .link {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 10px;
+    @media only screen and (min-width:$cut){
+      font-size: 20px;
+    }
+  }
+}
+
+.header-icons {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  .icon {
+    text-align: center;
+    color: grey;
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    border: 2.5px solid grey;
+    background: white;
+    transition: all .7s;
+    &:hover {
+      color: $main;
+      border: 2.5px solid black;
+      background: white;
+    }
+    &:active {
+      color: $main;
+      
+    }
+    @media only screen and (min-width:$cut) {
+      width: 35px;
+      height: 35px;
+      font-size: 35px;
+    }
+  }
+}
+
+.down {
+  color: #FFF;
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+  .icon {
+      position: absolute;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      fill: #fff;
+      -webkit-animation: pulse 1.3s infinite;
+      animation: pulse 1.3s infinite;
+      &:hover {
+        color: $sec;
+      }
+      &:active {
+        color: $sec;
+      }
+  }
+}

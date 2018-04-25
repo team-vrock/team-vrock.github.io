@@ -1,0 +1,94 @@
+#search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  @media only screen and (min-width: $cut) {
+    width: 80%;
+  }
+}
+
+.search-projects {
+  margin: 20px auto;
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  h5 {
+    margin: 0;
+  }
+  li {
+    color: $main;
+    font-size: 1.1rem;
+  }
+  p {
+    margin-right: 5px;
+  }
+  float: left;
+}
+
+.search {
+  text-align: left;
+  font-size: 60px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  p {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: $cut) {
+    flex-wrap: nowrap;
+    font-size: 75px;
+  }
+}
+
+.search-details {
+  text-align: left;
+  margin: 5px auto;
+  min-height: 50px;
+}
+
+input[type=text] {
+  width: 100%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 100%;
+}
+
+/* input:focus {
+  width: 100%;
+  border-radius:22px; 
+  outline: 0 none;
+  -moz-border-radius:22px; 
+  -webkit-border-radius:22px;
+  box-shadow: tomato;
+  border-style: solid;
+  border-width: 2px;
+} */
+
+.searchbox {
+  padding:6px 15px 6px 30px;
+  margin:3px;
+  /* background: url('./images/search.png') no-repeat 8px 6px;  */
+}
+
+.rounded { 
+  border-radius:22px;
+  border-width: 2px; 
+  -moz-border-radius:22px; 
+  -webkit-border-radius:22px;
+  border-style: solid;
+  outline: 0 none;
+}
+
+.rounded:focus { 
+  border-color: #339933;
+}

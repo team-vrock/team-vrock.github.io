@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include head.html %}
+<body>
+  
+  {% include navigation.html %}
+
+
+
+<section id="tagpage">
+    <h2>{{page.title}}</h2>
+{% for post in site.tags[page.tag] %}
+    <div class="user-tagpage">
+       <div class="images-left">
+         <img alt="mountains" src="{{ post.image }}" />
+       </div>
+       <div class="contents-right">
+         <h3>{{ post.title }}</h3>
+         <p>{{ post.excerpt }}</p>
+         <a class="project-link" href="{{ post.url }}">Check it out</a>
+       </div>
+     </div>
+    {% endfor %}
+  </section>
+  <section id="tags">
+      {% include tags.html %}
+  </section>
+  {% include footer.html %}
+</body>

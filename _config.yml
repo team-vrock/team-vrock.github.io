@@ -1,36 +1,30 @@
-# site settings
-title: vrock
-subtitle: by Tobias Geiser
-email: youremailaddress@gmail.com
-description: Welcome to the new home of vrock.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.vrock.ch" # the base hostname & protocol for your site
-author:
-street_address: Streettest 123
-city: Nashville
-state: TN
-zip_code: 55555
-country: United States of America
-phone: (88) 444-5555
+# Site settings
+title: A blog about lorem ipsum dolor sit amet
+description: A blog about lorem ipsum dolor sit amet
+#baseurl: "/" # the subpath of your site, e.g. /blog
+#url: "localhost:4000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
-# homepage tiles
-tiles-source: posts # accepts "posts" or "pages"
-tiles-count: 6
+# User settings
+username: VROCK
+user_description: "Snowboarding BMX having fun"
+user_title: by Tobias Geiser
+email: anon@anon.com
+twitter_username: lorem_ipsum
+github_username:  lorem_ipsum
+gplus_username:  lorem_ipsum
 
-# social settings
-500px_url:
-facebook_url:
-github_url: https://github.com/public-vrock
-gitlab_url: 
-googleplus_url: 
-instagram_url: https://instagram.com
-linkedin_url: https://www.linkedin.com
-pinterest_url:
-slack_url:
-twitter_url: https://twitter.com
+# Google-analytics
+google-analytics:
+  id: ""
 
-# build settings
+exclude: ['src' , 'node_modules']
+
 markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
 
-sass:
-  style: compressed
+#plugins:
+#  - jekyll-minifier

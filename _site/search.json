@@ -1,0 +1,53 @@
+[
+  
+  {
+    "title"    : "Playing with ubuntu 18.04",
+    "category" : "",
+    "tags"     : "ubuntu",
+    "url"      : "/jekyll/update/2018/04/23/ubuntu-lxc.html",
+    "date"     : "2018-04-23 17:16:01 +0200",
+    "desc"     : "Each post automatically takes the first block of text, from the beginning of the content to the first occurrence of excerpt_separator, and sets it in the post’s data hash. Take the above example of an index of posts. Perhaps you want to include a little hint about the post’s content by adding the first paragraph of each of your posts:",
+    "image"    : "/assets/img/ubuntu.png"
+    } ,
+    
+  {
+    "title"    : "Welcome to Jekyll!",
+    "category" : "",
+    "tags"     : "Jekyll",
+    "url"      : "/jekyll/update/2015/11/17/new-years-eve-is-awesome.html",
+    "date"     : "2015-11-17 23:16:01 +0100",
+    "desc"     : "Each post automatically takes the first block of text, from the beginning of the content to the first occurrence of excerpt_separator, and sets it in the post’s data hash. Take the above example of an index of posts. Perhaps you want to include a little hint about the post’s content by adding the first paragraph of each of your posts:",
+    "image"    : "/assets/img/powershell.png"
+    } ,
+    
+  {
+    "title"    : "Welcome to Jekyll!",
+    "category" : "",
+    "tags"     : "jekyll",
+    "url"      : "/jekyll/update/2015/11/17/new-years-eve-is-awesome-Copy.html",
+    "date"     : "2015-11-17 23:16:01 +0100",
+    "desc"     : "Each post automatically takes the first block of text, from the beginning of the content to the first occurrence of excerpt_separator, and sets it in the post’s data hash. Take the above example of an index of posts. Perhaps you want to include a little hint about the post’s content by adding the first paragraph of each of your posts:",
+    "image"    : "/assets/img/puppet.png"
+    } ,
+    
+  {
+    "title"    : "Welcome to Jekyll!",
+    "category" : "",
+    "tags"     : "jekyll",
+    "url"      : "/jekyll/update/2015/11/17/new-years-eve-is-awesome-Copy-(4).html",
+    "date"     : "2015-11-17 23:16:01 +0100",
+    "desc"     : "Each post automatically takes the first block of text, from the beginning of the content to the first occurrence of excerpt_separator, and sets it in the post’s data hash. Take the above example of an index of posts. Perhaps you want to include a little hint about the post’s content by adding the first paragraph of each of your posts:",
+    "image"    : "/assets/img/azure.png"
+    } ,
+    
+  {
+    "title"    : "Welcome to Jekyll!",
+    "category" : "",
+    "tags"     : "powershell",
+    "url"      : "/jekyll/update/2015/11/17/new-years-eve-is-awesome-Copy-(3).html",
+    "date"     : "2015-11-17 23:16:01 +0100",
+    "desc"     : "Each post automatically takes the first block of text, from the beginning of the content to the first occurrence of excerpt_separator, and sets it in the post’s data hash. Take the above example of an index of posts. Perhaps you want to include a little hint about the post’s content by adding the first paragraph of each of your posts:",
+    "image"    : "/assets/img/powershell.png"
+    } 
+    
+  ]
