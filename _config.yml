@@ -4,6 +4,8 @@ description:
 #baseurl: "/" # the subpath of your site, e.g. /blog
 #url: "localhost:4000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
+
+
 # User settings
 username: VROCK
 user_description: "Hi, folks and welcome to my blog. I'm a passionated senior system engineer who's always open for learning new things. So check out my work."
@@ -26,3 +28,8 @@ kramdown:
 
 #plugins:
 #  - jekyll-minifier
+
+
+# Github settings
+repository: public-vrock/public-vrock.github.io
+github: [metadata]
