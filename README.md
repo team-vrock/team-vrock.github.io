@@ -1,6 +1,6 @@
 # VROCK Jekyll Theme
 
-![](./screen.jpg)
+![](./screen.png)
 
 This is a simple and minimalist template for Jekyll designed for developers / engineers that want to show of their work.
 
