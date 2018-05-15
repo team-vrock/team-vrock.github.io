@@ -27,8 +27,8 @@ kramdown:
   hard_wrap: false
   syntax_highlighter: rouge
 
-#plugins:
-#  - jekyll-minifier
+plugins:
+  - jekyll-remote-theme
 
 
 # Github settings
