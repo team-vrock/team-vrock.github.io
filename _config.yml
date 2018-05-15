@@ -19,6 +19,7 @@ google-analytics:
 
 exclude: ['src' , 'node_modules']
 
+remote_theme: public-vrock/jekyll-theme-vrock
 markdown: kramdown
 highlighter: rouge
 kramdown:
