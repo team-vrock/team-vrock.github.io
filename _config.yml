@@ -15,7 +15,7 @@ github_username:  tobias-geiser
 
 # Google-analytics
 google-analytics:
-  id: ""
+  id: "UA-132338013-1"
 
 exclude: ['src' , 'node_modules']
 
