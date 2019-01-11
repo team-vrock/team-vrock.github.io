@@ -5,10 +5,11 @@ date:   2019-01-06 14:54:00 +0100
 categories: post
 image:  "/assets/img/git.png"
 tags: git
+author: Tobias Geiser
 excerpt_separator: <!--more-->
 ---
 
-In this post I want to show you how you can secure your git account with 2-factor authentication and signed commits.
+In this post I want to show you how you can protect your git repositories with 2-factor authentication and signed commits.
 <!--more-->
 
 ### Requirements
