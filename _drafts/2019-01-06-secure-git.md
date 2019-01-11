@@ -160,7 +160,7 @@ Each post automatically takes the first block of text, from the beginning of the
 Each post automatically takes the first block of text, from the beginning of the content to the first occurrence of excerpt_separator, and sets it in the post’s data hash. Take the above example of an index of posts. Perhaps you want to include a little hint about the post’s content by adding the first paragraph of each of your posts:
 Each post automatically takes the first block of text, from the beginning of the content to the first occurrence of excerpt_separator, and sets it in the post’s data hash. Take the above example of an index of posts. Perhaps you want to include a little hint about the post’s content by adding the first paragraph of each of your posts:
 
-#### References
+### References
 [2018-11-29 - SURVEILLANCE SELF-DEFENSE - A Deep Dive on End-to-End Encryption: How Do Public Key Encryption Systems Work](https://ssd.eff.org/en/module/deep-dive-end-end-encryption-how-do-public-key-encryption-systems-work)\\
 [2018-01-09 - RISAN - Upgrade Your -  SSH key to ED25519](https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54)\\
 [2017-10-04 - KUDELSKI SECURITY - How to defeat ED25519 and EDDSA using faults](https://research.kudelskisecurity.com/2017/10/04/defeating-eddsa-with-faults/)\\
