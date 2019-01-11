@@ -22,6 +22,8 @@ group :jekyll_plugins do
 #  gem "jekyll-feed", "~> 0.6"
 #  gem "jekyll-minifier"
 gem "jekyll-remote-theme"
+gem "liquid_reading_time"
+gem "liquid_pluralize"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
