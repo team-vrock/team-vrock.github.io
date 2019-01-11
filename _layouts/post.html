@@ -5,8 +5,8 @@
   <body>
       <section id="posts">
       <h2>{{page.title}}</h2>
-      <h5>Last Reviewed: {{page.date}}</h5>
-      <h6><i class="far fa-clock"></i> This article will take {{ content | reading_time | pluralize: "minute" }} to read.</h6>
+      <h5>Last Reviewed: {{page.date}}<br><br>Author: {{page.author}}</h5>
+      <h6><i class="far fa-clock"></i> This article will take ~{{ content | reading_time | pluralize: "minute" }} to read.</h6>
       
         <!-- This loops through the paginated posts -->
         {{content}}
