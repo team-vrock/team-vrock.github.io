@@ -6,7 +6,7 @@ date:   2019-01-15 20:34:00 +0100
 author: Tobias Geiser
 categories: disclaimer
 image:  "/assets/img/ubuntu.png"
-tags: privacy
+tags: disclaimer
 excerpt_separator: <!--more-->
 ---
 
