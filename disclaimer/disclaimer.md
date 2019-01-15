@@ -1,6 +1,6 @@
 ---
 permalink: /disclaimer/
-layout: post
+layout: keyword
 title:  "Disclaimer"
 date:   2019-01-15 20:34:00 +0100
 author: Tobias Geiser

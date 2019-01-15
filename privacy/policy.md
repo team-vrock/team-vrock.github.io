@@ -1,6 +1,6 @@
 ---
 permalink: /privacy/
-layout: post
+layout: keyword
 title:  "Privacy policy"
 date:   2019-01-15 19:29:00 +0100
 author: Tobias Geiser
