@@ -8,7 +8,7 @@ description:
 
 # User settings
 username: VROCK
-user_description: "Hi, folks and welcome to my blog. I'm a passionated senior system engineer who's always open for learning new things. So check out my work."
+user_description: "Hi, folks and welcome to my blog. I'm a passionated it technician who's always open for learning new things. So check out my work."
 user_title: by Tobias Geiser
 twitter_username: tobias_geiser
 github_username:  tobias-geiser
@@ -19,7 +19,7 @@ google-analytics:
 
 exclude: ['src' , 'node_modules']
 
-remote_theme: private-vrock/jekyll-theme-vrock@v1.0.0
+remote_theme: team-vrock/jekyll-theme-vrock@v1.0.0
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -34,5 +34,5 @@ plugins:
 
 
 # Github settings
-repository: public-vrock/public-vrock.github.io
+repository: team-vrock/public-vrock.github.io
 github: [metadata]
