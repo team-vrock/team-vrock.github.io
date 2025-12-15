@@ -1,10 +1,8 @@
 # Site settings
 title: VROCK
-description:
+description: "A Jekyll theme for developers"
 #baseurl: "/" # the subpath of your site, e.g. /blog
 #url: "localhost:4000" # the base hostname & protocol for your site e.g. https://www.john-fischer.ch
-
-
 
 # User settings
 username: VROCK
@@ -13,13 +11,22 @@ user_title: by Tobias Geiser
 twitter_username: tobias_geiser
 github_username:  tobias-geiser
 
+
+# Algolia search settings
+algolia:
+  application_id: '601E6L68TZ'
+  index_name: 'prod_web_vrock_homepage_index'
+  search_only_api_key: '9cb6e240f6849ce4e240437d156ef6a2'
+  powered_by: true
+
+
 # Google-analytics
-#google-analytics:
-#  id: "UA-132338013-1"
+google-analytics:
+  id: "G-TQ7CBSXT3V"
 
 exclude: ['src' , 'node_modules']
 
-remote_theme: team-vrock/jekyll-theme-vrock@v1.0.0
+remote_theme: team-vrock/jekyll-theme-vrock@v1.0.1
 markdown: kramdown
 highlighter: rouge
 kramdown:
