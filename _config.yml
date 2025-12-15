@@ -8,14 +8,14 @@ description:
 
 # User settings
 username: VROCK
-user_description: "Hi, folks and welcome to my blog. I'm a passionated it technician who's always open for learning new things. So check out my work."
+user_description: "Hi, folks and welcome to my blog. I'm a passionate it technician who's always open for learning new things. So check out my work."
 user_title: by Tobias Geiser
 twitter_username: tobias_geiser
 github_username:  tobias-geiser
 
 # Google-analytics
-google-analytics:
-  id: "UA-132338013-1"
+#google-analytics:
+#  id: "UA-132338013-1"
 
 exclude: ['src' , 'node_modules']
 
