@@ -8,6 +8,8 @@ description: "TEAM VROCK publishes practical technical posts and selected engine
 username: TEAM VROCK
 user_description: "TEAM VROCK combines practical engineering, cloud, DevOps, and platform experience with clear technical writing. The site is focused on posts first, with selected team projects as supporting context."
 user_title: Technical posts, projects, and engineering notes
+hero:
+  logo: /assets/img/logo.png
 github_username: team-vrock
 repository_name: team-vrock.github.io
 
