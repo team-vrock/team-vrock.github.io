@@ -1,0 +1,16 @@
+---
+- name: jekyll-theme-vrock
+  description: Modern Jekyll theme for technical teams, company sites, and
+    engineering blogs.
+  language: SCSS
+  stars: 0
+  html_url: https://github.com/team-vrock/jekyll-theme-vrock
+  image: "/assets/img/projects/jekyll-theme-vrock.png"
+  image_alt: jekyll-theme-vrock preview
+- name: team-vrock.github.io
+  description: TEAM VROCK website and technical publishing home.
+  language: HTML
+  stars: 0
+  html_url: https://github.com/team-vrock/team-vrock.github.io
+  image: "/assets/img/projects/team-vrock-github-io.png"
+  image_alt: TEAM VROCK website preview
