@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 Jekyll projects are easier to maintain when each repository defines its own Ruby version. `rbenv` provides a clean way to install Ruby, select the version per project, and keep Bundler and Jekyll isolated from the system Ruby.
 <!--more-->
 
-This guide shows a step-by-step setup for openSUSE using `rbenv`, `ruby-build`, Bundler, and Jekyll.
+This guide shows a step-by-step setup for openSUSE using the packaged `rbenv` and `ruby-build` tools, Bundler, and Jekyll.
 
 ### 1. Install openSUSE packages
 
@@ -31,26 +31,23 @@ sudo zypper install -t pattern devel_basis
 
 ### 2. Install rbenv and ruby-build
 
-Install `rbenv` into your home directory and add `ruby-build` as a plugin.
+Install `rbenv` and `ruby-build` from the openSUSE repositories.
 
 ```bash
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+sudo zypper install rbenv ruby-build
 ```
 
 ### 3. Initialize rbenv for the current shell
 
-Add `rbenv` to the current shell session and initialize it for Bash.
+Initialize `rbenv` for the current Bash session.
 
 ```bash
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - bash)"
 ```
 
-To make this persistent, add the same initialization to `~/.bashrc`.
+To make this persistent, add the initialization to `~/.bashrc`.
 
 ```bash
-printf '%s\n' 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 printf '%s\n' 'eval "$(rbenv init - bash)"' >> ~/.bashrc
 ```
 
@@ -128,16 +125,16 @@ Build the site first to catch configuration, theme, and dependency issues.
 bundle exec jekyll build
 ```
 
-Serve the site locally while working on content.
+Serve the site locally while working on content. Add `--livereload` so the browser refreshes when files change.
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload
 ```
 
 To include draft posts during local preview, add `--drafts`.
 
 ```bash
-bundle exec jekyll serve --drafts
+bundle exec jekyll serve --drafts --livereload
 ```
 
 ### Operational notes
@@ -147,3 +144,4 @@ bundle exec jekyll serve --drafts
 * Run `ruby -v` before troubleshooting Bundler or Jekyll issues.
 * Keep the Ruby version aligned with the version used by CI.
 * Use `bundle exec` so Jekyll runs with the gems from the project bundle.
+* Use `--livereload` during local writing sessions to refresh the browser automatically.
