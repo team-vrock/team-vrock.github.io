@@ -1,8 +1,6 @@
 # Site settings
 title: TEAM VROCK
-description: "TEAM VROCK publishes practical technical posts and selected engineering projects."
-#baseurl: "/" # the subpath of your site, e.g. /blog
-#url: "localhost:4000" # the base hostname & protocol for your site e.g. https://www.john-fischer.ch
+description: "TEAM VROCK publishes technical guidance, engineering notes, and selected project work."
 
 # User settings
 username: TEAM VROCK
@@ -67,7 +65,7 @@ google-analytics:
 
 exclude: ['src', 'node_modules', 'vendor']
 
-remote_theme: team-vrock/jekyll-theme-vrock@7de6bef52ccd14d21bd8aeced12e379875d4092f
+remote_theme: team-vrock/jekyll-theme-vrock@v1.0.0
 markdown: kramdown
 highlighter: rouge
 kramdown:

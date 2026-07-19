@@ -9,7 +9,7 @@ author: Tobias Geiser
 excerpt_separator: <!--more-->
 ---
 
-This draft outlines a practical baseline for protecting Git repositories with account security, signed commits, and disciplined key handling. It remains unpublished until the screenshots and current platform guidance are refreshed.
+Protecting Git repositories starts with disciplined account security, reliable key management, signed changes, and repository-level controls. This article outlines a practical baseline for teams that want to reduce risk without adding unnecessary process overhead.
 <!--more-->
 
 ### Security baseline
@@ -27,7 +27,7 @@ Repository protection starts with the account and workstation, not with Git alon
 For modern systems, Ed25519 is a good default for SSH keys. For commit signing, GitHub also supports SSH signing keys, which can be simpler than maintaining a separate GPG workflow.
 
 {% highlight shell %}
-ssh-keygen -t ed25519 -C "name@example.com"
+ssh-keygen -t ed25519 -C "workstation@example.invalid"
 git config --global gpg.format ssh
 git config --global user.signingkey ~/.ssh/id_ed25519.pub
 git config --global commit.gpgsign true
@@ -40,7 +40,7 @@ Turn on MFA before adding new keys or enforcing repository controls.
 * [GitHub: Configuring two-factor authentication](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication)
 * [GitLab: Two-factor authentication](https://docs.gitlab.com/user/profile/account/two_factor_authentication/)
 
-### Repository controls to document
+### Repository controls
 
 * Require pull request reviews on protected branches.
 * Require status checks before merge.
@@ -48,12 +48,12 @@ Turn on MFA before adding new keys or enforcing repository controls.
 * Restrict who can push to release branches.
 * Review deploy keys and personal access tokens regularly.
 
-### Before publishing
+### Operational checklist
 
-* Decide whether the final article should focus on SSH signing, GPG signing, or both.
-* Update screenshots for the current GitHub and GitLab interfaces.
-* Verify all commands on Linux and macOS.
-* Add a short checklist readers can copy into repository documentation.
+* Define whether SSH signing, GPG signing, or both are required.
+* Keep account recovery and multi-factor authentication documentation current.
+* Verify key-generation and signing commands on supported workstation platforms.
+* Review branch protection, deploy keys, and access tokens on a regular schedule.
 
 ### References
 

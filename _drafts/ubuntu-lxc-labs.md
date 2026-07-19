@@ -9,14 +9,14 @@ author: Tobias Geiser
 excerpt_separator: <!--more-->
 ---
 
-This draft collects practical notes for building a small Ubuntu LXC lab. It is intentionally unpublished until the commands, screenshots, and current Ubuntu version are reviewed.
+An Ubuntu LXC lab provides a lightweight environment for validating Linux services, configuration management, and automation workflows before applying changes to shared infrastructure.
 <!--more-->
 
 ### Goal
 
 Create a repeatable local lab that can be used for testing Linux services, configuration management, and automation workflows without creating full virtual machines for every experiment.
 
-### Topics to cover
+### Implementation areas
 
 * Host prerequisites and package installation
 * Container creation and lifecycle commands
@@ -25,7 +25,7 @@ Create a repeatable local lab that can be used for testing Linux services, confi
 * Common troubleshooting commands
 * When to use LXC instead of Docker or a full VM
 
-### Example commands to verify
+### Initial setup commands
 
 {% highlight shell %}
 sudo apt update
@@ -35,9 +35,9 @@ lxc-start -n lab-ubuntu
 lxc-attach -n lab-ubuntu
 {% endhighlight %}
 
-### Before publishing
+### Operational checklist
 
-* Update examples to the currently supported Ubuntu LTS release.
-* Add tested networking guidance.
-* Replace placeholder command output with verified output.
-* Add a short conclusion with recommended use cases.
+* Confirm the Ubuntu LTS release used for new containers.
+* Document the selected networking model and address allocation approach.
+* Capture storage and snapshot practices for repeatable lab recovery.
+* Define when LXC is appropriate compared with Docker or full virtual machines.

@@ -1,6 +1,6 @@
 ---
 - name: jekyll-theme-vrock
-  description: Corporate-clean Jekyll theme for technical teams, company sites, and
+  description: Modern Jekyll theme for technical teams, company sites, and
     engineering blogs.
   language: SCSS
   stars: 0
