@@ -65,9 +65,9 @@ google-analytics:
   id: "G-TQ7CBSXT3V"
   cookie_name: cookie-notice-dismissed
 
-exclude: ['src' , 'node_modules']
+exclude: ['src', 'node_modules', 'vendor']
 
-remote_theme: team-vrock/jekyll-theme-vrock@feat/refresh-modern
+remote_theme: team-vrock/jekyll-theme-vrock@affa9e6a1e3da6b99a683a359de33712086f57aa
 markdown: kramdown
 highlighter: rouge
 kramdown:
