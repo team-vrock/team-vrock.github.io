@@ -67,7 +67,7 @@ google-analytics:
 
 exclude: ['src', 'node_modules', 'vendor']
 
-remote_theme: team-vrock/jekyll-theme-vrock@0229d2e8c1bcbfb3b6fd7949d5668126392d4aee
+remote_theme: team-vrock/jekyll-theme-vrock@777d5a8297af59ff758c77ecbb26c7219512d96a
 markdown: kramdown
 highlighter: rouge
 kramdown:
