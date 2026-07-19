@@ -54,9 +54,9 @@ github_projects:
 
 # Algolia search settings
 algolia:
-  application_id: '601E6L68TZ'
-  index_name: 'prod_web_vrock_homepage_index'
-  search_only_api_key: '9cb6e240f6849ce4e240437d156ef6a2'
+  application_id: '9HJJW2GRPF'
+  index_name: 'prod_website-team-vrock'
+  search_only_api_key: '4ed8b0a9490972fe78991d43af164741'
   powered_by: true
 
 
