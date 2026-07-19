@@ -1,1 +1,3 @@
-This repository contains the data for blog www.vrock.ch.
+This repository contains the TEAM VROCK website for https://www.vrock.ch.
+
+The site uses `team-vrock/jekyll-theme-vrock@feat/refresh-modern` during the refresh work. GitHub project cards are pinned in `_config.yml` and can be enriched into `_data/github_projects.yml` during the GitHub Actions build.

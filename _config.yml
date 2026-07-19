@@ -1,15 +1,53 @@
 # Site settings
-title: VROCK
-description: "A Jekyll theme for developers"
+title: TEAM VROCK
+description: "TEAM VROCK publishes practical technical posts and selected engineering projects."
 #baseurl: "/" # the subpath of your site, e.g. /blog
 #url: "localhost:4000" # the base hostname & protocol for your site e.g. https://www.john-fischer.ch
 
 # User settings
-username: VROCK
-user_description: "Hi, folks and welcome to my blog. I'm a passionate it technician who's always open for learning new things. So check out my work."
-user_title: by Tobias Geiser
-twitter_username: tobias_geiser
-github_username:  tobias-geiser
+username: TEAM VROCK
+user_description: "TEAM VROCK combines practical engineering, cloud, DevOps, and platform experience with clear technical writing. The site is focused on posts first, with selected team projects as supporting context."
+user_title: Technical posts, projects, and engineering notes
+github_username: team-vrock
+repository_name: team-vrock.github.io
+
+primary_cta:
+  label: Read posts
+  url: "#searchlist"
+secondary_cta:
+  label: View projects
+  url: "#projects"
+
+social_links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/company/vrock"
+    icon: linkedin
+  - label: GitHub
+    url: "https://github.com/team-vrock"
+    icon: github
+
+capabilities:
+  - title: Cloud
+    icon: cloud
+    description: "Architecture, automation, and operational clarity for cloud platforms."
+  - title: Transformation
+    icon: handshake
+    description: "Pragmatic modernization for teams, infrastructure, and delivery practices."
+  - title: DevOps
+    icon: infinity
+    description: "CI/CD, infrastructure as code, platform engineering, and reliable operations."
+  - title: Innovation
+    icon: lightbulb
+    description: "Focused experiments, reusable patterns, and lessons from implementation work."
+  - title: Agile
+    icon: agile
+    description: "Short feedback loops, practical planning, and delivery-oriented collaboration."
+
+github_projects:
+  organization: team-vrock
+  pinned_repositories:
+    - jekyll-theme-vrock
+    - team-vrock.github.io
 
 
 # Algolia search settings
@@ -23,10 +61,11 @@ algolia:
 # Google-analytics
 google-analytics:
   id: "G-TQ7CBSXT3V"
+  cookie_name: cookie-notice-dismissed
 
 exclude: ['src' , 'node_modules']
 
-remote_theme: team-vrock/jekyll-theme-vrock@v1.0.1
+remote_theme: team-vrock/jekyll-theme-vrock@feat/refresh-modern
 markdown: kramdown
 highlighter: rouge
 kramdown:
