@@ -40,7 +40,9 @@ projects = repos.map do |repo|
       'description' => data['description'] || existing['description'] || "Pinned repository from #{organization}.",
       'language' => data['language'] || existing['language'] || 'Repository',
       'stars' => data['stargazers_count'],
-      'html_url' => data['html_url']
+      'html_url' => data['html_url'],
+      'image' => existing['image'],
+      'image_alt' => existing['image_alt']
     }
   else
     warn "Could not fetch #{organization}/#{repo}: #{response.code}" if response
@@ -50,10 +52,12 @@ projects = repos.map do |repo|
       'description' => existing['description'] || "Pinned repository from #{organization}.",
       'language' => existing['language'] || 'Repository',
       'stars' => existing['stars'] || 0,
-      'html_url' => "https://github.com/#{organization}/#{repo}"
+      'html_url' => "https://github.com/#{organization}/#{repo}",
+      'image' => existing['image'],
+      'image_alt' => existing['image_alt']
     }
   end
-end
+end.map { |project| project.reject { |_key, value| value.nil? || value == '' } }
 
 FileUtils.mkdir_p('_data')
 File.write('_data/github_projects.yml', projects.to_yaml)
