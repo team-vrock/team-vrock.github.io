@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Install Jekyll with rbenv on openSUSE"
+title: "Install Jekyll with rbenv on Linux"
 date: 2026-07-19 00:00:00 +0100
 categories: post
 image: "/assets/img/logo.png"
-tags: [jekyll, ruby, opensuse]
+tags: [jekyll, ruby, linux, debian, ubuntu, redhat, opensuse, arch]
 author: Tobias Geiser
 excerpt_separator: <!--more-->
 ---
@@ -12,11 +12,26 @@ excerpt_separator: <!--more-->
 Jekyll projects are easier to maintain when each repository defines its own Ruby version. `rbenv` provides a clean way to install Ruby, select the version per project, and keep Bundler and Jekyll isolated from the system Ruby.
 <!--more-->
 
-This guide shows a step-by-step setup for openSUSE using the packaged `rbenv` and `ruby-build` tools, Bundler, and Jekyll.
+This guide shows a step-by-step setup for Debian, Ubuntu, Red Hat-family distributions, openSUSE, and Arch Linux using `rbenv`, `ruby-build`, Bundler, and Jekyll.
 
-### 1. Install openSUSE packages
+### 1. Install Linux packages
 
 Install the compiler, headers, and libraries required by `ruby-build` before compiling Ruby.
+
+For Debian and Ubuntu, install the build tools and development libraries with `apt`.
+
+```bash
+sudo apt update
+sudo apt install git curl build-essential autoconf patch rustc libssl-dev libyaml-dev libreadline-dev zlib1g-dev libgmp-dev libncurses-dev libffi-dev libgdbm-dev libdb-dev uuid-dev libsqlite3-dev
+```
+
+For Fedora, Red Hat Enterprise Linux, CentOS Stream, Rocky Linux, and AlmaLinux, install the build tools and development libraries with `dnf`.
+
+```bash
+sudo dnf install git curl gcc make patch openssl-devel readline-devel zlib-devel libyaml-devel libffi-devel gdbm-devel ncurses-devel sqlite-devel
+```
+
+For openSUSE, install the build tools and development libraries with `zypper`.
 
 ```bash
 sudo zypper refresh
@@ -29,13 +44,44 @@ If your workstation uses a minimal development setup, also install the base deve
 sudo zypper install -t pattern devel_basis
 ```
 
+For Arch Linux, install the build tools and development libraries with `pacman`.
+
+```bash
+sudo pacman -Syu
+sudo pacman -S git curl base-devel openssl readline zlib libyaml libffi gdbm ncurses sqlite
+```
+
 ### 2. Install rbenv and ruby-build
 
-Install `rbenv` and `ruby-build` from the openSUSE repositories.
+Install `rbenv` and `ruby-build` from your distribution repositories where available.
+
+On Debian and Ubuntu:
+
+```bash
+sudo apt install rbenv ruby-build
+```
+
+On Fedora and Red Hat-family distributions:
+
+```bash
+sudo dnf install rbenv ruby-build
+```
+
+Depending on the distribution release, these packages may require EPEL or another additional repository.
+
+On openSUSE:
 
 ```bash
 sudo zypper install rbenv ruby-build
 ```
+
+On Arch Linux:
+
+```bash
+sudo pacman -S rbenv ruby-build
+```
+
+Distribution packages can lag behind current Ruby releases. If `rbenv install 3.3.12` fails or `rbenv install --list` does not show the Ruby version you need, update `ruby-build` or install a newer `ruby-build` release.
 
 ### 3. Initialize rbenv for the current shell
 
