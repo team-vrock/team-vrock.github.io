@@ -27,6 +27,11 @@ pre code {
   transform: translateY(0) scale(0.94);
 }
 
+.copy-code-button:hover,
+.copy-code-button:focus-visible {
+  transform: none;
+}
+
 .copy-code-button.is-copied {
   background: var(--code-bg) !important;
   box-shadow: none;
