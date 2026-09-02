@@ -12,6 +12,18 @@ pre code {
   word-break: normal;
 }
 
+/* Keep the white ape logo visible on light navigation and post-card surfaces. */
+:root:not([data-theme="dark"]) .floating-menu .home-logo,
+:root:not([data-theme="dark"]) .post-card .images-left img[src*="logo.png"] {
+  filter: invert(1) hue-rotate(180deg) brightness(0.2);
+  transition: filter 0.25s ease;
+}
+
+[data-theme="dark"] .floating-menu .home-logo,
+[data-theme="dark"] .post-card .images-left img[src*="logo.png"] {
+  filter: none;
+}
+
 .copy-code-button {
   min-width: 5.5rem;
   text-align: center;
