@@ -23,7 +23,7 @@ When analytics is approved, Google may process technical information such as bro
 
 The site stores a consent cookie after you approve analytics. This cookie records your choice so the notice does not appear on every page view.
 
-### Search
+### Site Search
 
 The site uses Algolia for post search. Search requests are sent to Algolia when you use the search box. Do not enter personal or confidential information into the search box.
 
