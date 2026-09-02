@@ -1,0 +1,31 @@
+<div class="section-heading">
+    <p class="section-kicker">Posts</p>
+    <h2 id="searchlist">Read the latest notes</h2>
+    <p>Search technical articles, implementation notes, and project write-ups.</p>
+</div>
+<div id="search-searchbar"></div>
+<div id="search-hits">
+    {% if site.posts.size > 0 %}
+    {% for post in site.posts limit:5 %}
+    <article class="user-projects post-card{% unless post.image %} post-card-no-image{% endunless %}">
+        <h3 class="post-title">{{ post.title }}</h3>
+        {% if post.image %}
+        <div class="images-left">
+            <img alt="" src="{{ post.image | relative_url }}" />
+            <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+        </div>
+        {% endif %}
+        <div class="contents-right">
+            <p>{{ post.excerpt }}</p>
+            <p class="post-date{% if post.image %} post-date-placeholder{% endif %}">{% unless post.image %}{{ post.date | date: "%B %-d, %Y" }}{% endunless %}</p>
+            <a class="project-link" href="{{ post.url | relative_url }}">Read post</a>
+        </div>
+    </article>
+    {% endfor %}
+    {% else %}
+    <div class="empty-state">
+        <p>No posts are published yet. Search is ready for the next article.</p>
+    </div>
+    {% endif %}
+</div>
+<div id="refinement-list"></div>

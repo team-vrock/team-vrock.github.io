@@ -1,0 +1,105 @@
+.images-left .project-link {
+  display: none;
+}
+
+.post-card {
+  display: grid;
+  grid-template-columns: minmax(130px, 20%) 1fr;
+  grid-template-areas:
+    "title title"
+    "image text";
+  grid-template-rows: auto minmax(180px, auto);
+  column-gap: 24px;
+  row-gap: 10px;
+  align-items: stretch;
+}
+
+.post-card .post-title {
+  grid-area: title;
+  margin: 0;
+}
+
+.post-card .images-left {
+  grid-area: image;
+  float: none;
+  width: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto;
+}
+
+.post-card .images-left img {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 130px;
+  min-width: 0;
+  margin: 0;
+}
+
+.post-card .images-left .post-date {
+  margin: auto 0 0;
+}
+
+.post-card .contents-right {
+  grid-area: text;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto;
+}
+
+.post-card .contents-right p {
+  margin-top: 0;
+}
+
+.post-card .project-link {
+  justify-self: end;
+  align-self: flex-end;
+  display: inline-block;
+  width: 118px;
+  box-sizing: border-box;
+  margin: auto 0 0;
+  border-radius: 22px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.post-card .contents-right .post-date {
+  margin: auto 0 0;
+}
+
+.post-date-placeholder {
+  visibility: hidden;
+}
+
+.post-card-no-image {
+  grid-template-areas:
+    "title title"
+    "text text";
+  grid-template-rows: auto auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .post-card,
+  .post-card-no-image {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "text"
+      "text";
+  }
+
+  .post-card .images-left img {
+    max-width: 100%;
+  }
+
+  .post-card .project-link {
+    justify-self: start;
+    align-self: flex-start;
+  }
+}
