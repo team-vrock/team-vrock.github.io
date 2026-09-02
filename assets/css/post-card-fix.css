@@ -2,6 +2,40 @@
   display: none;
 }
 
+/* Keep long commands readable on narrow screens without horizontal scrolling. */
+pre,
+pre code {
+  max-width: 100%;
+  overflow-x: visible !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.copy-code-button {
+  min-width: 5.5rem;
+  text-align: center;
+  transform-origin: center;
+  transition: background-color 0.25s ease,
+              border-color 0.25s ease,
+              color 0.25s ease,
+              transform 0.18s ease,
+              box-shadow 0.25s ease;
+}
+
+.copy-code-button:active {
+  transform: translateY(0) scale(0.94);
+}
+
+.copy-code-button.is-copied {
+  box-shadow: none;
+  transform: scale(1.02);
+}
+
+.copy-code-button.has-error {
+  box-shadow: none;
+}
+
 .post-card {
   display: grid;
   grid-template-columns: minmax(130px, 20%) 1fr;
