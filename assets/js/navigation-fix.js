@@ -9,4 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     });
+
+    const searchLink = document.querySelector('.floating-menu a[aria-label="Posts"]');
+    if (searchLink) {
+        searchLink.addEventListener('click', () => {
+            if (window.location.pathname === '/' || window.location.pathname === '') {
+                window.setTimeout(() => document.querySelector('.vrock-search-input')?.focus(), 250);
+            }
+        });
+    }
 });
