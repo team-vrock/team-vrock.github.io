@@ -28,12 +28,18 @@ pre code {
 }
 
 .copy-code-button.is-copied {
+  background-color: var(--code-bg) !important;
+  background-image: none !important;
   box-shadow: none;
   transform: scale(1.02);
+  opacity: 1;
 }
 
 .copy-code-button.has-error {
+  background-color: var(--code-bg) !important;
+  background-image: none !important;
   box-shadow: none;
+  opacity: 1;
 }
 
 .post-card {
