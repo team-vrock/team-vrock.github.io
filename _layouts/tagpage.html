@@ -15,13 +15,20 @@
           <article class="user-tagpage user-projects post-card">
             {% if post.image %}
             <div class="images-left">
+              <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
               <img alt="" src="{{ post.image | relative_url }}" />
+              <a class="project-link" href="{{ post.url | relative_url }}">Read post</a>
             </div>
             {% endif %}
             <div class="contents-right">
+              {% unless post.image %}
+              <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+              {% endunless %}
               <h3>{{ post.title }}</h3>
               <p>{{ post.excerpt }}</p>
+              {% unless post.image %}
               <a class="project-link" href="{{ post.url | relative_url }}">Read post</a>
+              {% endunless %}
             </div>
           </article>
           {% endfor %}
