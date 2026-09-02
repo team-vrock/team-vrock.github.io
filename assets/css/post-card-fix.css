@@ -28,17 +28,16 @@ pre code {
 }
 
 .copy-code-button.is-copied {
-  background-color: var(--code-bg) !important;
-  background-image: none !important;
+  background: var(--code-bg) !important;
   box-shadow: none;
-  transform: scale(1.02);
+  transform: none;
   opacity: 1;
 }
 
 .copy-code-button.has-error {
-  background-color: var(--code-bg) !important;
-  background-image: none !important;
+  background: var(--code-bg) !important;
   box-shadow: none;
+  transform: none;
   opacity: 1;
 }
 
