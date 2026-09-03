@@ -15,9 +15,9 @@ This privacy policy explains how https://www.vrock.ch handles data when you visi
 
 ### Analytics
 
-The site uses Google Analytics only after you approve analytics cookies in the cookie notice. Analytics helps us understand which posts are useful and how the site can be improved.
+The site uses Google Analytics Consent Mode. Before you approve analytics, Google receives limited cookieless measurement signals without analytics cookies. After approval, Google may use analytics cookies to help us understand which posts are useful and how the site can be improved.
 
-When analytics is approved, Google may process technical information such as browser type, approximate location, referring page, visited pages, and interaction data. You can read more in Google's privacy information at [https://policies.google.com/privacy](https://policies.google.com/privacy).
+Google may process technical information such as browser type, approximate location, referring page, visited pages, and interaction data. Advertising storage, advertising user data, and ad personalization remain denied by this site. You can read more in Google's privacy information at [https://policies.google.com/privacy](https://policies.google.com/privacy).
 
 ### Cookies
 
