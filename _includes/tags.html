@@ -1,8 +1,0 @@
-{% assign tags = site.tags | sort %}
-    {% for tag in tags %}
-        {% assign tag_slug = tag[0] | slugify %}
-        {% assign tag_path = '/tag/' | append: tag_slug | append: '.html' %}
-        <a href="{{ tag_path | relative_url }}" class="tags-link">
-                {{ tag[0] | replace:'-', ' ' }} <span class="tags-number">{{ tag | last | size }}</span>
-        </a>
-    {% endfor %}
