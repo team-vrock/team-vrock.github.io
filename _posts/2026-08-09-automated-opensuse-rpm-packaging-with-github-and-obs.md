@@ -1,11 +1,12 @@
 ---
 layout: post
 title: "From Pull Request to Package: RPM Builds with GitHub Actions and OBS"
-date: 2026-09-02 21:45:00 +0000
+date: 2026-08-09 10:00:00 +0000
 categories: post
 tags: [opensuse, obs, rpm, github, ci, packaging, automation]
 author: Tobias Geiser
-image: "/assets/posts/2026-09-02/github-obs.png"
+image: "/assets/posts/2026-08-09/github-obs.png"
+header: "/assets/posts/2026-08-09/github-obs-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -49,27 +50,7 @@ home:team-vrock:releases/<package>
 
 When the pull request closes, `<package>-pr123` is deleted. The same mechanism supports repositories containing several package directories; the workflows then match a pattern such as `<package-pattern>` (for example `font-*`).
 
-```text
-GitHub pull request
-        |
-        v
-GitHub Actions validation
-        |
-        v
-OBS branches: package-pr123
-        |
-        v
-OBS Tumbleweed build
-        |
-        v
-Merge to main
-        |
-        v
-OBS releases: package
-        |
-        v
-Delete package-pr123
-```
+![The packaging pipeline: a GitHub pull request triggers validation in GitHub Actions, builds in a temporary OBS staging project, publishes to the release project on merge, and cleans up the staging package.](/assets/posts/2026-08-09/github-obs-pipeline.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 ## Prerequisites
 
@@ -79,7 +60,7 @@ You need:
 - An OBS account with permission to write to the target projects.
 - An OBS project with a Tumbleweed repository and the required architectures.
 - GitHub Actions enabled for the repository.
-- The reusable workflows from [`team-vrock/workflow-obs`](https://github.com/team-vrock/workflow-obs).
+- The reusable workflows from the org-internal `team-vrock/workflow-obs` repository.
 - `git`, `osc`, and the relevant RPM tools for local verification.
 
 Configure these GitHub Actions secrets in **Settings -> Secrets and variables -> Actions -> Secrets**:
@@ -473,10 +454,10 @@ sudo zypper refresh
 sudo zypper install <package>
 ```
 
-For openSUSE Leap, use the matching repository path, for example `15.6`:
+The release project above currently publishes the `openSUSE_Tumbleweed` target. For other openSUSE versions, check which targets the project publishes on build.opensuse.org and substitute the matching repository path:
 
 ```bash
-sudo zypper addrepo -f https://download.opensuse.org/repositories/home:/team-vrock:/releases/15.6/home:team-vrock:releases.repo
+sudo zypper addrepo -f https://download.opensuse.org/repositories/home:/team-vrock:/releases/<distribution>/home:team-vrock:releases.repo
 sudo zypper refresh
 sudo zypper install <package>
 ```
@@ -627,7 +608,7 @@ The wildcard is appropriate when the package contains one data payload. If an up
 
 ### Compiler version requirements
 
-Do not select a compiler version from the current distribution alone. Read the upstream source's declared requirement. In the Ghostty 1.3.1 session, Zig 0.13.0 failed because the source declared `minimum_zig_version = "0.15.2"`; the later correction used Zig 0.15.2 and the corresponding archive names:
+Do not select a compiler version from the current distribution alone. Read the upstream source's declared requirement. For example, while packaging Ghostty (a terminal emulator) version 1.3.1 for openSUSE, the build with Zig 0.13.0 failed because the source declared `minimum_zig_version = "0.15.2"`; the fix used Zig 0.15.2 and the corresponding archive names:
 
 ```text
 zig-x86_64-linux-0.15.2.tar.xz
@@ -655,8 +636,7 @@ This workflow makes RPM packaging reviewable and repeatable:
 
 Keeping the packaging files in GitHub and the builds in OBS gives maintainers a clear audit trail while retaining OBS's distribution-specific build environment.
 
-## Further Reading
+## References
 
 - [Open Build Service User Guide](https://openbuildservice.org/help/manuals/obs-user-guide/)
 - [openSUSE Packaging Guidelines](https://en.opensuse.org/openSUSE:Packaging_guidelines)
-- [team-vrock/workflow-obs](https://github.com/team-vrock/workflow-obs)

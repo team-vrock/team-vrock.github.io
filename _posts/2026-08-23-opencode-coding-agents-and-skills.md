@@ -1,11 +1,12 @@
 ---
 layout: post
 title: "Repeatable Engineering with OpenCode Agents and Skills"
-date: 2026-09-02 22:30:00 +0000
+date: 2026-08-23 10:00:00 +0000
 categories: post
 tags: [opencode, ai-agents, coding, skills, automation, documentation]
 author: Tobias Geiser
-image: "/assets/posts/2026-09-02/ai-agent-skills.png"
+image: "/assets/posts/2026-08-23/ai-agent-skills.png"
+header: "/assets/posts/2026-08-23/ai-agent-skills-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -31,7 +32,7 @@ This structure lets an AI coding assistant contribute to implementation and docu
 
 OpenCode's coding behavior is split into three useful layers:
 
-1. **Global configuration** selects defaults and registers providers, MCP servers, permissions, agents, and skill search paths.
+1. **Global configuration** selects defaults and registers providers, MCP (Model Context Protocol) servers, permissions, agents, and skill search paths.
 2. **Agents** define a role, operating mode, model choice, permissions, and system instructions.
 3. **Skills** define reusable procedures that an agent can load when a task matches the skill description.
 
@@ -49,12 +50,14 @@ The global files are normally stored under:
 
 Project-local configuration can override global configuration. A project can also contain its own `.opencode/agent/` and `.opencode/skills/` directories. Keep reusable personal procedures global, and keep project-specific procedures in the project so they can be reviewed with the source code.
 
+![OpenCode architecture: user request routed through opencode.json config, specialist agent profiles, dynamically discovered skills, and verified execution tools.](/assets/posts/2026-08-23/opencode-architecture.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+
 ## Prerequisites
 
 - OpenCode installed and starting cleanly on your workstation.
 - A writable `~/.config/opencode/` configuration directory.
 - A local checkout of the Jekyll website you want to document into (used by the `create-jekyll-post` examples). The guide uses `~/src/team-vrock/team-vrock.github.io`; replace it with your checkout path.
-- `rbenv`, Bundler, and the website's Ruby version for local previews, as described in the [rbenv setup guide](/post/2026/07/19/install-jekyll-with-rbenv-on-opensuse.html).
+- `rbenv`, Bundler, and the website's Ruby version for local previews, as described in the [rbenv setup guide]({% post_url 2026-06-28-install-jekyll-with-rbenv-on-opensuse %}).
 
 ## Walkthrough
 
@@ -204,7 +207,7 @@ The agent should not reconstruct a guide from memory. It should inspect:
 - Conversation history and the session timeline.
 - Commands actually executed.
 - Relevant repository files and commits.
-- CI logs and OBS build results, for example from the [OBS packaging workflow](/post/2026/09/02/automated-opensuse-rpm-packaging-with-github-and-obs.html).
+- CI logs and OBS build results, for example from the [OBS packaging workflow]({% post_url 2026-08-09-automated-opensuse-rpm-packaging-with-github-and-obs %}).
 - Configuration and version information.
 - Final status and known limitations.
 
@@ -227,7 +230,7 @@ The agent uses the site's existing Jekyll conventions:
 ---
 layout: post
 title: "Descriptive Technical Title"
-date: 2026-09-02 22:30:00 +0000
+date: 2026-08-23 10:00:00 +0000
 categories: post
 tags: [opencode, ai-agents, coding, skills, automation, documentation]
 author: Tobias Geiser
@@ -238,7 +241,7 @@ excerpt_separator: <!--more-->
 If a post has a feature image, add `image:` only after the file has been supplied or generated and validated:
 
 ```yaml
-image: "/assets/posts/2026-09-02/post-image.png"
+image: "/assets/posts/YYYY-MM-DD/<slug>-badge.png"
 ```
 
 The current image policy targets a square `512x512` PNG. The agent should omit the field when no image capability is configured or when a supplied image is missing. It must not create a fake placeholder.
@@ -354,7 +357,7 @@ gem install bundler
 bundle install
 ```
 
-Native gems require a compiler and Ruby development headers. Follow the site's [rbenv setup guide](/post/2026/07/19/install-jekyll-with-rbenv-on-opensuse.html) for distribution-specific prerequisites.
+Native gems require a compiler and Ruby development headers. Follow the site's [rbenv setup guide]({% post_url 2026-06-28-install-jekyll-with-rbenv-on-opensuse %}) for distribution-specific prerequisites.
 
 ### The generated article contains unsupported claims
 

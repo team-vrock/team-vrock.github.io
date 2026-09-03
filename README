@@ -1,3 +1,3 @@
 This repository contains the TEAM VROCK website for https://www.vrock.ch.
 
-The site uses `team-vrock/jekyll-theme-vrock@v1.0.0`. GitHub project cards are pinned in `_config.yml` and enriched through `_data/github_projects.yml` during the GitHub Actions build.
+The site uses `team-vrock/jekyll-theme-vrock@v1.1.3`. GitHub project cards are pinned in `_config.yml` and enriched through `_data/github_projects.yml` during the GitHub Actions build.

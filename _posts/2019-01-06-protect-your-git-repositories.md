@@ -4,6 +4,7 @@ title: "Protect your Git repositories"
 date: 2019-01-06 14:54:00 +0100
 categories: post
 image: "/assets/posts/2019-01-06/git-repo-sec.png"
+header: "/assets/posts/2019-01-06/git-security-header.png"
 tags: [git, github, gitlab, openssh, gpg, security]
 author: Tobias Geiser
 excerpt_separator: <!--more-->
@@ -27,6 +28,10 @@ Repository protection is a layered problem. A strong transport does not help if 
 
 The controls apply to both GitHub and GitLab. Where the platforms differ, both variants are named.
 
+![Multi-layered Git repository security: SSH device keys, signed commits, branch protection, hardened CI credentials, and secret scanning.](/assets/posts/2019-01-06/git-security-layers.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+
+
+
 ## Prerequisites
 
 - A GitHub or GitLab account with permission to manage repository settings.
@@ -36,7 +41,7 @@ The controls apply to both GitHub and GitLab. Where the platforms differ, both v
 
 ## Walkthrough
 
-### 1. Protect the account first
+### Protect the account first
 
 Repository protection starts with the account and workstation, not with Git alone. A useful baseline should include:
 
@@ -53,7 +58,7 @@ References:
 - [GitLab: Two-factor authentication](https://docs.gitlab.com/user/profile/account/two_factor_authentication/)
 - [GitHub: Reviewing your security log](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/reviewing-your-security-log)
 
-### 2. Use a separate SSH key per device
+### Use a separate SSH key per device
 
 Do not copy one private key between laptops, servers, and build agents. A separate key per device makes revocation and incident investigation possible.
 
@@ -114,7 +119,7 @@ References:
 - [OpenSSH: `ssh-keygen` manual](https://man.openbsd.org/ssh-keygen)
 - [FIDO Alliance: FIDO2](https://fidoalliance.org/fido2/)
 
-### 3. Sign commits and tags
+### Sign commits and tags
 
 Authentication proves which account can access a repository. Commit signatures provide an additional authorship signal and make tampering more visible. Choose one signing method and document it for the team.
 
@@ -188,7 +193,7 @@ References:
 - [GitLab: Signed commits](https://docs.gitlab.com/user/project/repository/signed_commits/)
 - [GnuPG: `gpg` man page](https://gnupg.org/documentation/manpage.html)
 
-### 4. Protect important branches
+### Protect important branches
 
 Treat `main`, release, and deployment branches as controlled interfaces. Configure branch protection or protected branches with at least:
 
@@ -209,12 +214,12 @@ Two additional controls strengthen the review boundary:
 
 References:
 
-- [GitHub: About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merging-in-your-repository/managing-protected-branches/about-protected-branches)
-- [GitHub: Managing rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merging-in-your-repository/managing-rulesets/about-rulesets)
+- [GitHub: About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
+- [GitHub: Managing rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets)
 - [GitLab: Protected branches](https://docs.gitlab.com/user/project/repository/branches/protected/)
 - [GitLab: Protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
 
-### 5. Harden CI/CD authentication
+### Harden CI/CD authentication
 
 Start every workflow with least-privilege token permissions and increase them only for the specific job that needs more access:
 
@@ -243,7 +248,7 @@ References:
 - [GitHub: Workflow syntax permissions](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#permissions)
 - [GitLab: OpenID Connect authentication using ID tokens](https://docs.gitlab.com/ee/ci/secrets/id_token_authentication.html)
 
-### 6. Minimize tokens, keys, and integrations
+### Minimize tokens, keys, and integrations
 
 Use the smallest access scope for every integration:
 
@@ -263,7 +268,7 @@ References:
 - [GitLab: Project access tokens](https://docs.gitlab.com/user/project/settings/project_access_tokens/)
 - [GitLab: OpenID Connect identity federation](https://docs.gitlab.com/ci/cloud_services/)
 
-### 7. Secure CI and pull requests
+### Secure CI and pull requests
 
 CI can modify releases and infrastructure, so treat workflow files as privileged code:
 
@@ -283,7 +288,7 @@ References:
 - [GitLab: CI/CD YAML syntax](https://docs.gitlab.com/ci/yaml/)
 - [GitLab: CI/CD security](https://docs.gitlab.com/ee/ci/security/)
 
-### 8. Detect and remove secrets
+### Detect and remove secrets
 
 Assume a secret committed to Git is compromised, even if the commit is later deleted. The response should be:
 
@@ -300,11 +305,11 @@ Also enable dependency review and dependency alerts (for example Dependabot on G
 References:
 
 - [GitHub: About secret scanning](https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning)
-- [GitHub: Push protection](https://docs.github.com/en/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/push-protection-for-repositories-and-organizations)
+- [GitHub: Push protection](https://docs.github.com/en/code-security/concepts/secret-security/push-protection)
 - [GitLab: Secret detection](https://docs.gitlab.com/user/application_security/secret_detection/)
 - [GitLab: Push rules](https://docs.gitlab.com/user/project/repository/push_rules/)
 
-### 9. Protect the workstation and keys
+### Protect the workstation and keys
 
 Repository security depends on the endpoint where keys are used:
 
@@ -334,7 +339,7 @@ References:
 - [OpenSSH: Release notes](https://www.openssh.com/releasenotes.html)
 - [GnuPG: Operational commands](https://gnupg.org/documentation/manuals/gnupg/Operational-GPG-Commands.html)
 
-### 10. Review and recovery checklist
+### Review and recovery checklist
 
 Run this review at a fixed interval and after security-sensitive changes:
 

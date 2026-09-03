@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Install Jekyll with rbenv on Linux"
-date: 2026-07-19 00:00:00 +0100
+date: 2026-06-28 10:00:00 +0000
 categories: post
-image: "/assets/posts/2026-07-19/rbenv-linux.png"
+image: "/assets/posts/2026-06-28/rbenv-linux.png"
+header: "/assets/posts/2026-06-28/rbenv-linux-header.png"
 tags: [jekyll, ruby, linux, debian, ubuntu, redhat, opensuse, arch]
 author: Tobias Geiser
 excerpt_separator: <!--more-->
@@ -22,6 +23,8 @@ System Ruby installations are shared by the operating system and package tooling
 
 The guide shows a step-by-step setup for Debian, Ubuntu, Red Hat-family distributions, openSUSE, and Arch Linux using `rbenv`, `ruby-build`, Bundler, and Jekyll.
 
+![Isolated Ruby development workflow: base packages, rbenv installation, project-pinned Ruby versions, Bundler dependencies, and local Jekyll server.](/assets/posts/2026-06-28/rbenv-workflow.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+
 ## Prerequisites
 
 - A workstation running Debian, Ubuntu, Fedora, RHEL/CentOS Stream/Rocky/AlmaLinux, openSUSE, or Arch Linux.
@@ -30,7 +33,7 @@ The guide shows a step-by-step setup for Debian, Ubuntu, Red Hat-family distribu
 
 ## Walkthrough
 
-### 1. Install Linux packages
+### Install Linux packages
 
 Install the compiler, headers, and libraries required by `ruby-build` before compiling Ruby.
 
@@ -67,7 +70,7 @@ sudo pacman -Syu
 sudo pacman -S git curl base-devel openssl readline zlib libyaml libffi gdbm ncurses sqlite
 ```
 
-### 2. Install rbenv and ruby-build
+### Install rbenv and ruby-build
 
 Install `rbenv` and `ruby-build` from your distribution repositories where available.
 
@@ -105,7 +108,7 @@ git -C "$(rbenv root)/plugins/ruby-build" pull
 
 When the distribution package owns the definitions instead, install a current release of `ruby-build` from its [GitHub releases](https://github.com/rbenv/ruby-build/releases) or use the `rbenv` installer to get plugin-based management.
 
-### 3. Initialize rbenv for the current shell
+### Initialize rbenv for the current shell
 
 Initialize `rbenv` for the current Bash session.
 
@@ -131,7 +134,7 @@ Confirm that `rbenv` is available.
 rbenv --version
 ```
 
-### 4. Install Ruby
+### Install Ruby
 
 Install the Ruby version used by the project.
 
@@ -145,7 +148,7 @@ Confirm the installed version is available.
 rbenv versions
 ```
 
-### 5. Select Ruby for the project with rbenv local
+### Select Ruby for the project with rbenv local
 
 Run this command in the Jekyll project directory. It writes a `.ruby-version` file for the repository.
 
@@ -156,7 +159,7 @@ ruby -v
 
 Use `rbenv local` when a project should consistently use the same Ruby version. Commit `.ruby-version` so every contributor and CI job selects the same Ruby.
 
-### 6. Select Ruby for the shell with rbenv shell
+### Select Ruby for the shell with rbenv shell
 
 Use `rbenv shell` when you need a temporary Ruby version for the current terminal session only.
 
@@ -171,7 +174,7 @@ Clear the temporary override when it is no longer needed.
 rbenv shell --unset
 ```
 
-### 7. Install Bundler and project dependencies
+### Install Bundler and project dependencies
 
 Install Bundler for the selected Ruby version.
 
@@ -192,7 +195,7 @@ bundle config set --local path vendor/bundle
 bundle install
 ```
 
-### 8. Build and serve the Jekyll site
+### Build and serve the Jekyll site
 
 Build the site first to catch configuration, theme, and dependency issues.
 
@@ -216,11 +219,11 @@ bundle exec jekyll serve --drafts --livereload
 
 ### `rbenv install` reports the version is not available
 
-The installed `ruby-build` definitions are older than the requested Ruby release. Update `ruby-build` as described in step 2 and retry `rbenv install --list`.
+The installed `ruby-build` definitions are older than the requested Ruby release. Update `ruby-build` as described in *Install rbenv and ruby-build* and retry `rbenv install --list`.
 
 ### The Ruby build fails with missing header errors
 
-Compile errors that mention `openssl`, `readline`, or `zlib` usually mean a development package from step 1 is missing. Install the missing `-dev`/`-devel` package and rerun `rbenv install`. The build log printed by `ruby-build` names the failing component near the end of its output.
+Compile errors that mention `openssl`, `readline`, or `zlib` usually mean a development package from the package installation step is missing. Install the missing `-dev`/`-devel` package and rerun `rbenv install`. The build log printed by `ruby-build` names the failing component near the end of its output.
 
 ### `jekyll` or `bundle` runs against the wrong Ruby
 

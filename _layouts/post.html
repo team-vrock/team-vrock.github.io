@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+  {% include navigation.html %}
+
+  <main id="content">
+  <article id="posts" class="post-layout">
+    <style>
+      .post-header h1 {
+        font-size: clamp(2.1rem, 4.2vw, 3rem);
+        line-height: 1.2;
+      }
+      .post-layout h2 {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-top: 2.25rem;
+        margin-bottom: 0.75rem;
+      }
+      .post-layout h3 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+        margin-top: 1.75rem;
+        margin-bottom: 0.6rem;
+      }
+      .post-layout h4 {
+        font-size: 1.5rem;
+        line-height: 1.35;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .post-layout h5 {
+        font-size: 1.25rem;
+        line-height: 1.4;
+        margin-top: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .post-layout h6 {
+        font-size: 1rem;
+        line-height: 1.45;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .post-layout .highlight,
+      .post-layout .highlight pre,
+      .post-layout .highlight code,
+      .post-layout pre,
+      .post-layout pre code {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .post-header--banner {
+        position: relative;
+        background-image: url('{{ page.header | prepend: site.baseurl }}');
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+        padding: 3rem 2.25rem;
+        margin-bottom: 2.5rem;
+        overflow: hidden;
+        border: 1px solid var(--border-color, rgba(124, 92, 255, 0.2));
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      }
+      .post-header--banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(18, 24, 38, 0.72) 0%, rgba(29, 35, 45, 0.65) 100%);
+        backdrop-filter: blur(1px);
+        pointer-events: none;
+      }
+      [data-theme="light"] .post-header--banner::before,
+      :root:not([data-theme="dark"]) .post-header--banner::before {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(246, 248, 251, 0.70) 100%);
+      }
+      .post-header--banner > * {
+        position: relative;
+        z-index: 1;
+      }
+      .post-header--banner h1 {
+        margin-top: 0.25rem;
+        margin-bottom: 0.75rem;
+        font-size: clamp(2.1rem, 4.2vw, 3rem);
+        line-height: 1.2;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+      }
+      [data-theme="light"] .post-header--banner h1,
+      :root:not([data-theme="dark"]) .post-header--banner h1 {
+        text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
+      }
+      .post-header--banner .section-kicker {
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent-cyan, #4ddde8);
+        margin-bottom: 0.25rem;
+      }
+      .post-header--banner .post-meta {
+        opacity: 0.9;
+        font-size: 0.92rem;
+      }
+    </style>
+    {% if page.header %}
+    <header class="post-header post-header--banner">
+      <p class="section-kicker">Post</p>
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta">{% if page.date %}Last reviewed: {{ page.date | date: "%B %-d, %Y" }}{% endif %}{% if page.author %} - Author: {{ page.author }}{% endif %}</p>
+    </header>
+    {% else %}
+    <header class="post-header">
+      <p class="section-kicker">Post</p>
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta">{% if page.date %}Last reviewed: {{ page.date | date: "%B %-d, %Y" }}{% endif %}{% if page.author %} - Author: {{ page.author }}{% endif %}</p>
+    </header>
+    {% endif %}
+
+    {{ content }}
+    {% include comments.html %}
+  </article>
+  </main>
+  {% include footer.html %}
+  {% include cookie-consent.html %}
+
+</body>
+</html>
