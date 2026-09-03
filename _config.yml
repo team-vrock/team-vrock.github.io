@@ -60,7 +60,7 @@ algolia:
 
 # Google-analytics
 google-analytics:
-  id: "G-TQ7CBSXT3V"
+  id: "G-LTCYGVJJ4M"
   cookie_name: cookie-notice-dismissed
 
 exclude: ['src', 'node_modules', 'vendor']
