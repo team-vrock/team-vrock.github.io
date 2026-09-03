@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Install Jekyll with rbenv on Linux"
-date: 2026-06-28 10:00:00 +0000
+date: 2026-06-14 10:00:00 +0000
 categories: post
-image: "/assets/posts/2026-06-28/rbenv-linux.png"
-header: "/assets/posts/2026-06-28/rbenv-linux-header.png"
+image: "/assets/posts/2026-06-14/rbenv-linux.png"
+header: "/assets/posts/2026-06-14/rbenv-linux-header.png"
 tags: [jekyll, ruby, linux, debian, ubuntu, redhat, opensuse, arch]
 author: Tobias Geiser
 excerpt_separator: <!--more-->
@@ -23,7 +23,7 @@ System Ruby installations are shared by the operating system and package tooling
 
 The guide shows a step-by-step setup for Debian, Ubuntu, Red Hat-family distributions, openSUSE, and Arch Linux using `rbenv`, `ruby-build`, Bundler, and Jekyll.
 
-![Isolated Ruby development workflow: base packages, rbenv installation, project-pinned Ruby versions, Bundler dependencies, and local Jekyll server.](/assets/posts/2026-06-28/rbenv-workflow.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![Isolated Ruby development workflow: base packages, rbenv installation, project-pinned Ruby versions, Bundler dependencies, and local Jekyll server.](/assets/posts/2026-06-14/rbenv-workflow.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 ## Prerequisites
 

@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Running ComfyUI with ROCm on a Radeon 9070 XT, Part 1: A Working Docker Setup"
-date: 2026-05-17 10:00:00 +0000
+date: 2026-05-10 10:00:00 +0000
 categories: post
 tags: [rocm, amdgpu, comfyui, docker, opensuse, ai]
 author: Tobias Geiser
-image: "/assets/posts/2026-05-17/amd-rocm-tumbleweed.png"
-header: "/assets/posts/2026-05-17/rocm-comfyui-header.png"
+image: "/assets/posts/2026-05-10/amd-rocm-tumbleweed.png"
+header: "/assets/posts/2026-05-10/rocm-comfyui-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -15,7 +15,7 @@ Most ROCm guides on the internet were written for RDNA3 cards. The Radeon RX 907
 
 **TL;DR:** I run ComfyUI from the official `rocm/pytorch` Ubuntu image with the GPU passed straight into the container. No host-side ROCm install, `HSA_OVERRIDE_GFX_VERSION=12.0.1` for the 7.2.x stack, and — the hard-won part — no `expandable_segments` allocator setting, which crashed the GPU with memory access faults. Part 2 covers training stability and why I ended up keeping a ROCm 7.1.1 container around.
 
-This is Part 1 of a two-part series. [Part 2]({% post_url 2026-05-31-running-comfyui-with-rocm-on-a-radeon-9070-xt-part-2 %}) covers LoRA training stability, crash triage, and the ROCm 7.1.1 fallback.
+This is Part 1 of a two-part series. [Part 2]({% post_url 2026-05-17-running-comfyui-with-rocm-on-a-radeon-9070-xt-part-2 %}) covers LoRA training stability, crash triage, and the ROCm 7.1.1 fallback.
 
 ## Overview
 

@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Context Is a Budget, Part 2: Designing Efficient AI Agent Context"
-date: 2026-09-06 10:00:00 +0000
+date: 2026-08-22 10:00:00 +0000
 categories: post
 tags: [ai, ai-agents, llm, agents, architecture]
 author: Tobias Geiser
-image: "/assets/posts/2026-09-06/ai-context.png"
-header: "/assets/posts/2026-09-06/ai-context-header.png"
+image: "/assets/posts/2026-08-22/ai-context.png"
+header: "/assets/posts/2026-08-22/ai-context-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -15,7 +15,7 @@ Large context windows are useful — and dangerously easy to waste. When buildin
 
 **TL;DR:** The real question is not *how much context the model can accept* but *what is worth spending context on right now*. Manage context with explicit token budgets, dynamic loading and unloading, filtered tool results, deduplication with source authority, and rebuild the context every turn instead of accumulating it.
 
-This is Part 2 of a five-part series on designing AI agent infrastructure. [Part 1]({% post_url 2026-09-05-llm-memory-is-not-chat-history-part-1 %}) covered persistent memory, [Part 3]({% post_url 2026-09-12-skills-are-not-prompts-part-3 %}) covers skills as capability packages, [Part 4]({% post_url 2026-09-13-stop-writing-prompts-start-writing-specifications-part-4 %}) covers specification-driven prompting, and [Part 5]({% post_url 2026-09-20-stop-writing-prompts-start-writing-specifications-part-5 %}) covers execution loops, guardrails, and templates.
+This is Part 2 of a five-part series on designing AI agent infrastructure. [Part 1]({% post_url 2026-08-16-llm-memory-is-not-chat-history-part-1 %}) covered persistent memory, [Part 3]({% post_url 2026-08-23-skills-are-not-prompts-part-3 %}) covers skills as capability packages, [Part 4]({% post_url 2026-08-29-stop-writing-prompts-start-writing-specifications-part-4 %}) covers specification-driven prompting, and [Part 5]({% post_url 2026-08-30-stop-writing-prompts-start-writing-specifications-part-5 %}) covers execution loops, guardrails, and templates.
 
 ## Context Windows Are Not Free
 
@@ -41,7 +41,7 @@ More context can improve performance, but only when the additional information i
 
 I find it useful to think about an agent prompt as a stack of layers:
 
-![The context stack: every prompt is assembled from layers — system policy, profile and project instructions, dynamically loaded skills, relevant memory, the current conversation, tool results, retrieved knowledge, and the user request.](/assets/posts/2026-09-06/ai-context-stack.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![The context stack: every prompt is assembled from layers — system policy, profile and project instructions, dynamically loaded skills, relevant memory, the current conversation, tool results, retrieved knowledge, and the user request.](/assets/posts/2026-08-22/ai-context-stack.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 Not every layer should always be present — that is the important part. A good agent runtime assembles context dynamically for each turn.
 
@@ -86,7 +86,7 @@ This separates *who the agent is* from *what the agent currently needs to know* 
 
 Suppose an engineering agent has access to Kubernetes, Terraform, Ansible, Docker, React, Rust, Python, PostgreSQL, AWS, Azure, GCP, GitHub Actions, Helm, Prometheus, and Grafana skills. Loading every skill into every prompt would be absurd: a request like "Fix this Rust lifetime error" needs none of the AWS deployment conventions or Prometheus alerting rules.
 
-Skills should be loaded dynamically — the agent determines which capabilities are relevant, then the runtime injects them. Discovery is separate from loading: a lightweight skill catalog with cheap name-and-description entries can expose hundreds of skills, while full definitions load only when selected. That gives you `discover -> load` instead of `load everything -> hope the model ignores most of it`. [Part 3]({% post_url 2026-09-12-skills-are-not-prompts-part-3 %}) designs this capability system in depth.
+Skills should be loaded dynamically — the agent determines which capabilities are relevant, then the runtime injects them. Discovery is separate from loading: a lightweight skill catalog with cheap name-and-description entries can expose hundreds of skills, while full definitions load only when selected. That gives you `discover -> load` instead of `load everything -> hope the model ignores most of it`. [Part 3]({% post_url 2026-08-23-skills-are-not-prompts-part-3 %}) designs this capability system in depth.
 
 Tool definitions deserve the same treatment. A sophisticated agent environment exposes filesystem, shell, Git, GitHub, Kubernetes, cloud, database, browser, ticketing, observability, and deployment tools — if every schema loads into every request, tool definitions alone consume tens of thousands of tokens. A better architecture uses tool groups:
 
@@ -331,7 +331,7 @@ The goal is not to put everything into the model. The goal is to give the model 
 
 ## References
 
-- [Part 1: LLM Memory Is Not Chat History]({% post_url 2026-09-05-llm-memory-is-not-chat-history-part-1 %})
-- [Part 3: Skills Are Not Prompts]({% post_url 2026-09-12-skills-are-not-prompts-part-3 %})
-- [Part 4: From Prompts to Specifications]({% post_url 2026-09-13-stop-writing-prompts-start-writing-specifications-part-4 %})
-- [Part 5: Loops, Guardrails, and Templates]({% post_url 2026-09-20-stop-writing-prompts-start-writing-specifications-part-5 %})
+- [Part 1: LLM Memory Is Not Chat History]({% post_url 2026-08-16-llm-memory-is-not-chat-history-part-1 %})
+- [Part 3: Skills Are Not Prompts]({% post_url 2026-08-23-skills-are-not-prompts-part-3 %})
+- [Part 4: From Prompts to Specifications]({% post_url 2026-08-29-stop-writing-prompts-start-writing-specifications-part-4 %})
+- [Part 5: Loops, Guardrails, and Templates]({% post_url 2026-08-30-stop-writing-prompts-start-writing-specifications-part-5 %})

@@ -1,19 +1,19 @@
 ---
 layout: post
 title: "An Azure Landing Zone Built from Solutions, Part 1: Architecture"
-date: 2026-07-19 10:00:00 +0000
+date: 2026-07-12 10:00:00 +0000
 categories: post
 tags: [azure, terraform, opentofu, landing-zone, iac, cloud, github-actions, ci]
 author: Tobias Geiser
-image: "/assets/posts/2026-07-19/azure-landing-zone.png"
-header: "/assets/posts/2026-07-19/azure-landing-zone-header.png"
+image: "/assets/posts/2026-07-12/azure-landing-zone.png"
+header: "/assets/posts/2026-07-12/azure-landing-zone-header.png"
 excerpt_separator: <!--more-->
 ---
 
 Landing zones have a habit of becoming monoliths: one giant Terraform root, one giant state file, one giant argument about who is allowed to run `apply`. Mine started as a monolith too. This post shows the structure it evolved into — small, separately-versioned *solutions*, wired together by a config file with an explicit dependency graph — and why each decision was made.
 <!--more-->
 
-**TL;DR:** The landing zone is a set of solution directories (governance, hub, spoke, DNS, app platform), each with its own remote state and version-pinned references into a shared module collection. A root `config.json` declares which solutions are enabled and what they depend on. OpenTofu runs everything via OIDC federation — no long-lived service principal secrets. [Part 2]({% post_url 2026-07-26-an-azure-landing-zone-built-from-solutions-part-2 %}) covers the GitHub Actions orchestration that applies the graph in order.
+**TL;DR:** The landing zone is a set of solution directories (governance, hub, spoke, DNS, app platform), each with its own remote state and version-pinned references into a shared module collection. A root `config.json` declares which solutions are enabled and what they depend on. OpenTofu runs everything via OIDC federation — no long-lived service principal secrets. [Part 2]({% post_url 2026-07-19-an-azure-landing-zone-built-from-solutions-part-2 %}) covers the GitHub Actions orchestration that applies the graph in order.
 
 This is Part 1 of a two-part series.
 
@@ -41,7 +41,7 @@ The repository layout:
     └── appl-containerapps/
 ```
 
-![Modular Azure Landing Zone hierarchy: root management group, platform services (connectivity, identity), workload landing zones, and isolated sandboxes.](/assets/posts/2026-07-19/azure-landing-zone-hierarchy.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![Modular Azure Landing Zone hierarchy: root management group, platform services (connectivity, identity), workload landing zones, and isolated sandboxes.](/assets/posts/2026-07-12/azure-landing-zone-hierarchy.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 ## Architecture
 
@@ -138,6 +138,6 @@ Everything runs with OIDC federation: GitHub Actions (and local runs) authentica
 
 ## References
 
-- [Part 2: Dependency-Ordered CI with GitHub Actions]({% post_url 2026-07-26-an-azure-landing-zone-built-from-solutions-part-2 %})
+- [Part 2: Dependency-Ordered CI with GitHub Actions]({% post_url 2026-07-19-an-azure-landing-zone-built-from-solutions-part-2 %})
 - [Cloud Adoption Framework: Azure landing zones](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/)
 - [OpenTofu documentation](https://opentofu.org/docs/)

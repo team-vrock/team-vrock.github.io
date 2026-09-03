@@ -15,7 +15,7 @@ My Windows 11 VM felt sluggish everywhere — window dragging, app launches, eve
 
 **TL;DR:** Audit with `virsh dumpxml` before tuning. The wins were storage (`NOCOW`/raw, `cache=none`, `io=native`), CPU pinning, and guest-side drivers — not the CPU model, which was already `host-passthrough`. Along the way, USB passthrough broke because the `usb-host` QEMU module was not installed, and `virtio-vga-gl` failed because the display backend had no OpenGL. Both are openSUSE packaging details worth knowing.
 
-This is Part 1 of a two-part series. [Part 2]({% post_url 2026-05-03-tuning-a-windows-11-kvm-guest-for-pro-audio-part-2 %}) covers pinning for audio work, USB controller passthrough, and xfreerdp tuning.
+This is Part 1 of a two-part series. [Part 2]({% post_url 2026-04-26-tuning-a-windows-11-kvm-guest-for-pro-audio-part-2 %}) covers pinning for audio work, USB controller passthrough, and xfreerdp tuning.
 
 ## Overview
 
@@ -183,6 +183,6 @@ Since daily use runs over RDP anyway, a fast SPICE console is a nice-to-have, no
 
 ## References
 
-- [Part 2: Pro Audio Over RDP]({% post_url 2026-05-03-tuning-a-windows-11-kvm-guest-for-pro-audio-part-2 %})
+- [Part 2: Pro Audio Over RDP]({% post_url 2026-04-26-tuning-a-windows-11-kvm-guest-for-pro-audio-part-2 %})
 - [libvirt: CPU tuning](https://libvirt.org/formatdomain.html#cpu-tuning)
 - [virtio-win drivers](https://github.com/virtio-win/virtio-win-pkg-scripts)

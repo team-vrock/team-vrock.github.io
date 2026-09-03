@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "An Azure Landing Zone Built from Solutions, Part 2: Dependency-Ordered CI"
-date: 2026-07-26 10:00:00 +0000
+date: 2026-07-19 10:00:00 +0000
 categories: post
 tags: [azure, terraform, opentofu, landing-zone, iac, cloud, github-actions, ci]
 author: Tobias Geiser
-image: "/assets/posts/2026-07-26/azure-ci-pipeline.png"
-header: "/assets/posts/2026-07-26/azure-ci-pipeline-header.png"
+image: "/assets/posts/2026-07-19/azure-ci-pipeline.png"
+header: "/assets/posts/2026-07-19/azure-ci-pipeline-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -15,7 +15,7 @@ Part 1 ended with a dependency graph sitting in `config.json`. This part is abou
 
 **TL;DR:** Pull requests plan exactly one changed solution (enforced). Manual `workflow_dispatch` workflows plan/apply the whole graph in `depends_on` order via a single orchestrator job, because GitHub Actions cannot build dynamic `needs` from runtime config. `verify` runs on every push to `main`. Authentication is OIDC. The troubleshooting section covers the classic 403 you get right after assigning a role at management-group scope.
 
-This is Part 2 of a two-part series. [Part 1]({% post_url 2026-07-19-an-azure-landing-zone-built-from-solutions-part-1 %}) covers the architecture.
+This is Part 2 of a two-part series. [Part 1]({% post_url 2026-07-12-an-azure-landing-zone-built-from-solutions-part-1 %}) covers the architecture.
 
 ## Overview
 
@@ -29,7 +29,7 @@ Three workflows, each delegating to a reusable workflow in the shared module-col
 
 All of them federate with `permissions: id-token: write` and inherit repository secrets — Azure credentials are never stored, only the federated service principal's client ID.
 
-![Dependency-ordered Azure solutions CI pipeline: pull request trigger, dependency graph resolution, wave-based parallel execution, and automated verification.](/assets/posts/2026-07-26/azure-solutions-ci-pipeline.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![Dependency-ordered Azure solutions CI pipeline: pull request trigger, dependency graph resolution, wave-based parallel execution, and automated verification.](/assets/posts/2026-07-19/azure-solutions-ci-pipeline.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 ## Walkthrough
 
@@ -122,6 +122,6 @@ It is the most common pushback. The trade is deliberate: strict single-solution 
 
 ## References
 
-- [Part 1: Architecture]({% post_url 2026-07-19-an-azure-landing-zone-built-from-solutions-part-1 %})
+- [Part 1: Architecture]({% post_url 2026-07-12-an-azure-landing-zone-built-from-solutions-part-1 %})
 - [GitHub Actions: reusable workflows](https://docs.github.com/actions/sharing-automations/reusing-workflows)
 - [Azure: workload identity federation for GitHub Actions](https://learn.microsoft.com/azure/developer/github/connect-from-azure)

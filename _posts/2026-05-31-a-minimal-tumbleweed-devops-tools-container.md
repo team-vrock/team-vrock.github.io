@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "A Minimal Tumbleweed DevOps Tools Container"
-date: 2026-06-14 10:00:00 +0000
+date: 2026-05-31 10:00:00 +0000
 categories: post
 tags: [opensuse, docker, devops, terraform, tooling]
 author: Tobias Geiser
-image: "/assets/posts/2026-06-14/devops-tumbleweed.png"
-header: "/assets/posts/2026-06-14/devops-tumbleweed-header.png"
+image: "/assets/posts/2026-05-31/devops-tumbleweed.png"
+header: "/assets/posts/2026-05-31/devops-tumbleweed-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -42,7 +42,7 @@ Three decisions shape the image:
 2. **Certificates baked in.** Private CA certificates are copied into `/etc/pki/trust/anchors/` and activated with `update-ca-certificates` at build time, and every SSL-aware runtime is pointed at the system bundle via environment variables.
 3. **Non-root with XDG paths.** The container runs as a `devops` user, and all tool configuration lives under `$XDG_CONFIG_HOME`, `$XDG_DATA_HOME`, `$XDG_CACHE_HOME` — which are just three host-mounted directories, so logins and settings survive container rebuilds.
 
-![Multi-stage DevOps container build pipeline: base builder, checksum-verified downloads, non-root user security, and minimal runtime image.](/assets/posts/2026-06-14/devops-container-build.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![Multi-stage DevOps container build pipeline: base builder, checksum-verified downloads, non-root user security, and minimal runtime image.](/assets/posts/2026-05-31/devops-container-build.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 ## Prerequisites
 

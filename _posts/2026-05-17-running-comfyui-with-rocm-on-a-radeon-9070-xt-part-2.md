@@ -1,16 +1,16 @@
 ---
 layout: post
 title: "Running ComfyUI with ROCm on a Radeon 9070 XT, Part 2: Training Crashes and a ROCm Downgrade"
-date: 2026-05-31 10:00:00 +0000
+date: 2026-05-17 10:00:00 +0000
 categories: post
 tags: [rocm, amdgpu, comfyui, docker, opensuse, ai]
 author: Tobias Geiser
-image: "/assets/posts/2026-05-31/rocm-troubleshooting.png"
-header: "/assets/posts/2026-05-31/rocm-troubleshooting-header.png"
+image: "/assets/posts/2026-05-17/rocm-troubleshooting.png"
+header: "/assets/posts/2026-05-17/rocm-troubleshooting-header.png"
 excerpt_separator: <!--more-->
 ---
 
-In [Part 1]({% post_url 2026-05-17-running-comfyui-with-rocm-on-a-radeon-9070-xt-part-1 %}) I got ComfyUI generating images on a Radeon RX 9070 XT inside Docker. Inference worked. Then I pointed LoRA training at the same card, and it faulted at step 61 — every time, deterministically, hard enough to take the whole desktop down. This post is the triage: every knob I turned, which ones were dead ends, and why the fix turned out to be *going backwards* to ROCm 7.1.1.
+In [Part 1]({% post_url 2026-05-10-running-comfyui-with-rocm-on-a-radeon-9070-xt-part-1 %}) I got ComfyUI generating images on a Radeon RX 9070 XT inside Docker. Inference worked. Then I pointed LoRA training at the same card, and it faulted at step 61 — every time, deterministically, hard enough to take the whole desktop down. This post is the triage: every knob I turned, which ones were dead ends, and why the fix turned out to be *going backwards* to ROCm 7.1.1.
 <!--more-->
 
 **TL;DR:** On RDNA4 (`gfx1201`), a newer ROCm stack is not automatically a better one. ROCm 7.2.3 with PyTorch 2.10 faulted reproducibly under training load; the same workload completed cleanly on ROCm 7.1.1 with `HSA_ENABLE_SDMA=0`, no GFX override, and a conservative allocator config. Keep a known-good older image around.
@@ -187,6 +187,6 @@ PyTorch's OOM message recommends `expandable_segments:True`. On this stack that 
 
 ## References
 
-- [Part 1: A Working Docker Setup]({% post_url 2026-05-17-running-comfyui-with-rocm-on-a-radeon-9070-xt-part-1 %})
+- [Part 1: A Working Docker Setup]({% post_url 2026-05-10-running-comfyui-with-rocm-on-a-radeon-9070-xt-part-1 %})
 - [ROCm PyTorch Docker images](https://hub.docker.com/r/rocm/pytorch)
 - [PyTorch: memory management environment variables](https://docs.pytorch.org/docs/stable/notes/cuda.html)

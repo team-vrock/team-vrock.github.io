@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Stop Writing Prompts, Part 5: Loops, Guardrails, and Templates"
-date: 2026-09-20 10:00:00 +0000
+date: 2026-08-30 10:00:00 +0000
 categories: post
 tags: [ai, ai-agents, llm, agents, architecture]
 author: Tobias Geiser
-image: "/assets/posts/2026-09-20/ai-spec-templates.png"
-header: "/assets/posts/2026-09-20/ai-spec-templates-header.png"
+image: "/assets/posts/2026-08-30/ai-spec-templates.png"
+header: "/assets/posts/2026-08-30/ai-spec-templates-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -15,7 +15,7 @@ A specification tells the model what "done" means — but the real leverage come
 
 **TL;DR:** Turn single-pass generation into iterative loops: investigate, then change, then verify, and keep going until acceptance criteria are met. Guard every goal with constraints, invariants, and authority boundaries — otherwise a capable agent will happily disable health checks or delete tests to make its metric pass. Specify process rather than "thinking", demand evidence over guesses, and reuse templates so the smallest specification that removes the important ambiguity wins.
 
-This is Part 5 of a five-part series on designing AI agent infrastructure. [Part 1]({% post_url 2026-09-05-llm-memory-is-not-chat-history-part-1 %}) covered persistent memory, [Part 2]({% post_url 2026-09-06-context-is-a-budget-part-2 %}) covered context as a budget, [Part 3]({% post_url 2026-09-12-skills-are-not-prompts-part-3 %}) covered skills as capability packages, and [Part 4]({% post_url 2026-09-13-stop-writing-prompts-start-writing-specifications-part-4 %}) covered the layered specification itself.
+This is Part 5 of a five-part series on designing AI agent infrastructure. [Part 1]({% post_url 2026-08-16-llm-memory-is-not-chat-history-part-1 %}) covered persistent memory, [Part 2]({% post_url 2026-08-22-context-is-a-budget-part-2 %}) covered context as a budget, [Part 3]({% post_url 2026-08-23-skills-are-not-prompts-part-3 %}) covered skills as capability packages, and [Part 4]({% post_url 2026-08-29-stop-writing-prompts-start-writing-specifications-part-4 %}) covered the layered specification itself.
 
 ## Investigate Before Changing
 
@@ -33,7 +33,7 @@ Before making changes:
 
 This is much more reliable than immediately saying "implement X". It creates a simple loop:
 
-![The investigate-first loop: observe the current state, understand how it works, make the smallest reasonable change, and verify the result.](/assets/posts/2026-09-20/ai-observe-verify-loop.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![The investigate-first loop: observe the current state, understand how it works, make the smallest reasonable change, and verify the result.](/assets/posts/2026-08-30/ai-observe-verify-loop.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 That loop is far more important than most clever prompting tricks.
 
@@ -78,7 +78,7 @@ That keeps the plan as an intermediate artifact, not the final product.
 
 For software engineering, one of the strongest patterns is:
 
-![The build-test-fix loop: failures at the build or test stage feed a diagnose-and-fix cycle and re-enter the flow instead of stopping the run.](/assets/posts/2026-09-20/ai-build-test-fix-loop.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![The build-test-fix loop: failures at the build or test stage feed a diagnose-and-fix cycle and re-enter the flow instead of stopping the run.](/assets/posts/2026-08-30/ai-build-test-fix-loop.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 The important instruction is:
 
@@ -209,7 +209,7 @@ For each identified problem:
 
 This prevents the model from presenting guesses as discoveries. A troubleshooting agent should ideally behave like the upper chain in the illustration, where findings graduate from evidence through hypothesis and test to a conclusion — and never like the faded lower chain, where a guess flows straight into confidence:
 
-![Evidence-based troubleshooting: findings move from evidence to hypothesis to tested conclusion, while the guess-straight-to-confidence path stays switched off.](/assets/posts/2026-09-20/ai-evidence-loop.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![Evidence-based troubleshooting: findings move from evidence to hypothesis to tested conclusion, while the guess-straight-to-confidence path stays switched off.](/assets/posts/2026-08-30/ai-evidence-loop.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 A related pattern is asking the model to separate what it knows from what it assumes before implementing:
 
@@ -369,11 +369,11 @@ Identify the most likely causes and what evidence would confirm them.
 
 The result of that investigation becomes input to the next specification:
 
-![Specification refinement: investigation and learning tighten the specification before execution begins.](/assets/posts/2026-09-20/ai-refine-loop.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![Specification refinement: investigation and learning tighten the specification before execution begins.](/assets/posts/2026-08-30/ai-refine-loop.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 For very complex projects, I like treating the specification itself as an artifact. Start with the goal, then let the model help discover requirements, constraints, unknowns, risks, and acceptance criteria — and review the resulting specification before implementation. This works particularly well for architecture changes, new features, infrastructure migrations, API redesigns, and agent development. Essentially, the LLM helps transform an idea into an executable specification:
 
-![Specification-driven development: each stage reduces ambiguity, from idea through goal, specification, plan, implementation, and verification to review.](/assets/posts/2026-09-20/ai-spec-pipeline.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![Specification-driven development: each stage reduces ambiguity, from idea through goal, specification, plan, implementation, and verification to review.](/assets/posts/2026-08-30/ai-spec-pipeline.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 Each stage reduces ambiguity, and the LLM becomes much more reliable because each step has clearer boundaries.
 
@@ -614,7 +614,7 @@ But the underlying task is still ambiguous. The model does not need to be threat
 
 ## References
 
-- [Part 1: LLM Memory Is Not Chat History]({% post_url 2026-09-05-llm-memory-is-not-chat-history-part-1 %})
-- [Part 2: Context Is a Budget]({% post_url 2026-09-06-context-is-a-budget-part-2 %})
-- [Part 3: Skills Are Not Prompts]({% post_url 2026-09-12-skills-are-not-prompts-part-3 %})
-- [Part 4: From Prompts to Specifications]({% post_url 2026-09-13-stop-writing-prompts-start-writing-specifications-part-4 %})
+- [Part 1: LLM Memory Is Not Chat History]({% post_url 2026-08-16-llm-memory-is-not-chat-history-part-1 %})
+- [Part 2: Context Is a Budget]({% post_url 2026-08-22-context-is-a-budget-part-2 %})
+- [Part 3: Skills Are Not Prompts]({% post_url 2026-08-23-skills-are-not-prompts-part-3 %})
+- [Part 4: From Prompts to Specifications]({% post_url 2026-08-29-stop-writing-prompts-start-writing-specifications-part-4 %})

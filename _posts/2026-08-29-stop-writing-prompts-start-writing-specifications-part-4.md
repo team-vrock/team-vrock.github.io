@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Stop Writing Prompts, Part 4: From Prompts to Specifications"
-date: 2026-09-13 10:00:00 +0000
+date: 2026-08-29 10:00:00 +0000
 categories: post
 tags: [ai, ai-agents, llm, agents, architecture]
 author: Tobias Geiser
-image: "/assets/posts/2026-09-13/ai-prompt.png"
-header: "/assets/posts/2026-09-13/ai-prompt-header.png"
+image: "/assets/posts/2026-08-29/ai-prompt.png"
+header: "/assets/posts/2026-08-29/ai-prompt-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -15,7 +15,7 @@ Most people working with LLMs are still hunting for the perfect prompt. They add
 
 **TL;DR:** A good LLM request looks less like a prompt and more like a task definition: what should be achieved, what already exists, which constraints apply, what must not change, how success is measured, and how the model verifies its work. Structure requests in layers — goal, context, requirements, constraints, non-goals, acceptance criteria, verification, execution policy — and scale the effort to the risk of the task.
 
-This is Part 4 of a five-part series on designing AI agent infrastructure. [Part 1]({% post_url 2026-09-05-llm-memory-is-not-chat-history-part-1 %}) covered persistent memory, [Part 2]({% post_url 2026-09-06-context-is-a-budget-part-2 %}) covered context as a budget, [Part 3]({% post_url 2026-09-12-skills-are-not-prompts-part-3 %}) covered skills as capability packages, and [Part 5]({% post_url 2026-09-20-stop-writing-prompts-start-writing-specifications-part-5 %}) covers execution loops, guardrails, and specification templates.
+This is Part 4 of a five-part series on designing AI agent infrastructure. [Part 1]({% post_url 2026-08-16-llm-memory-is-not-chat-history-part-1 %}) covered persistent memory, [Part 2]({% post_url 2026-08-22-context-is-a-budget-part-2 %}) covered context as a budget, [Part 3]({% post_url 2026-08-23-skills-are-not-prompts-part-3 %}) covered skills as capability packages, and [Part 5]({% post_url 2026-08-30-stop-writing-prompts-start-writing-specifications-part-5 %}) covers execution loops, guardrails, and specification templates.
 
 ## The Prompt Is Not the Goal
 
@@ -103,7 +103,7 @@ Now the model is solving the problem, not merely implementing my guess. This is 
 
 For serious tasks, I normally think about the request in several layers:
 
-![The 8 layers of a task specification: Goal, Context, Requirements, Constraints, Non-Goals, Acceptance Criteria, Verification, and Execution Policy.](/assets/posts/2026-09-13/ai-spec-layers.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![The 8 layers of a task specification: Goal, Context, Requirements, Constraints, Non-Goals, Acceptance Criteria, Verification, and Execution Policy.](/assets/posts/2026-08-29/ai-spec-layers.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 Not every task needs every section, but this structure removes a huge amount of ambiguity. The rest of this post walks through each layer.
 
@@ -278,7 +278,7 @@ more specification
 
 ## References
 
-- [Part 1: LLM Memory Is Not Chat History]({% post_url 2026-09-05-llm-memory-is-not-chat-history-part-1 %})
-- [Part 2: Context Is a Budget]({% post_url 2026-09-06-context-is-a-budget-part-2 %})
-- [Part 3: Skills Are Not Prompts]({% post_url 2026-09-12-skills-are-not-prompts-part-3 %})
-- [Part 5: Loops, Guardrails, and Templates]({% post_url 2026-09-20-stop-writing-prompts-start-writing-specifications-part-5 %})
+- [Part 1: LLM Memory Is Not Chat History]({% post_url 2026-08-16-llm-memory-is-not-chat-history-part-1 %})
+- [Part 2: Context Is a Budget]({% post_url 2026-08-22-context-is-a-budget-part-2 %})
+- [Part 3: Skills Are Not Prompts]({% post_url 2026-08-23-skills-are-not-prompts-part-3 %})
+- [Part 5: Loops, Guardrails, and Templates]({% post_url 2026-08-30-stop-writing-prompts-start-writing-specifications-part-5 %})

@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Building a Lab Router with Banana Pi BPI-R4 and Cobanero"
-date: 2026-07-12 10:00:00 +0000
+date: 2026-06-28 10:00:00 +0000
 categories: post
-image: "/assets/posts/2026-07-12/cobanero.png"
-header: "/assets/posts/2026-07-12/cobanero-header.png"
+image: "/assets/posts/2026-06-28/cobanero.png"
+header: "/assets/posts/2026-06-28/cobanero-header.png"
 tags: [linux, opensuse, networking, router, bpi-r4, cobanero, ovs, docker]
 author: Tobias Geiser
 excerpt_separator: <!--more-->
@@ -33,7 +33,7 @@ The router should provide:
 
 The design keeps the router host responsible for bootstrapping, physical networking, and performance tuning. Application services run as containers and are managed by systemd.
 
-![Cobanero lab router architecture: 10G SFP+ WAN, Open vSwitch VLAN matrix, firewall and DHCP services, and high-speed LAN routing.](/assets/posts/2026-07-12/cobanero-network-layout.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![Cobanero lab router architecture: 10G SFP+ WAN, Open vSwitch VLAN matrix, firewall and DHCP services, and high-speed LAN routing.](/assets/posts/2026-06-28/cobanero-network-layout.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 ### Example hardware
 

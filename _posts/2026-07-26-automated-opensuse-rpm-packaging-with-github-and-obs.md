@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "From Pull Request to Package: RPM Builds with GitHub Actions and OBS"
-date: 2026-08-09 10:00:00 +0000
+date: 2026-07-26 10:00:00 +0000
 categories: post
 tags: [opensuse, obs, rpm, github, ci, packaging, automation]
 author: Tobias Geiser
-image: "/assets/posts/2026-08-09/github-obs.png"
-header: "/assets/posts/2026-08-09/github-obs-header.png"
+image: "/assets/posts/2026-07-26/github-obs.png"
+header: "/assets/posts/2026-07-26/github-obs-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -50,7 +50,7 @@ home:team-vrock:releases/<package>
 
 When the pull request closes, `<package>-pr123` is deleted. The same mechanism supports repositories containing several package directories; the workflows then match a pattern such as `<package-pattern>` (for example `font-*`).
 
-![The packaging pipeline: a GitHub pull request triggers validation in GitHub Actions, builds in a temporary OBS staging project, publishes to the release project on merge, and cleans up the staging package.](/assets/posts/2026-08-09/github-obs-pipeline.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![The packaging pipeline: a GitHub pull request triggers validation in GitHub Actions, builds in a temporary OBS staging project, publishes to the release project on merge, and cleans up the staging package.](/assets/posts/2026-07-26/github-obs-pipeline.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 ## Prerequisites
 

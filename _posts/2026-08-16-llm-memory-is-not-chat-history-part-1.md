@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "LLM Memory Is Not Chat History, Part 1: Designing Memory for AI Agents"
-date: 2026-09-05 10:00:00 +0000
+date: 2026-08-16 10:00:00 +0000
 categories: post
 tags: [ai, ai-agents, llm, agents, architecture]
 author: Tobias Geiser
-image: "/assets/posts/2026-09-05/ai-memory.png"
-header: "/assets/posts/2026-09-05/ai-memory-header.png"
+image: "/assets/posts/2026-08-16/ai-memory.png"
+header: "/assets/posts/2026-08-16/ai-memory-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -15,7 +15,7 @@ Most AI agents today do not really remember anything. They have context. That is
 
 **TL;DR:** A chat log is a history, not a memory. Useful agent memory is selective, scoped, sourced, versioned, and forgettable. The model should help decide what to remember — it should never own the memory.
 
-This is Part 1 of a five-part series on designing AI agent infrastructure. [Part 2]({% post_url 2026-09-06-context-is-a-budget-part-2 %}) covers context as a budget, [Part 3]({% post_url 2026-09-12-skills-are-not-prompts-part-3 %}) covers skills as capability packages, [Part 4]({% post_url 2026-09-13-stop-writing-prompts-start-writing-specifications-part-4 %}) covers specification-driven prompting, and [Part 5]({% post_url 2026-09-20-stop-writing-prompts-start-writing-specifications-part-5 %}) covers execution loops, guardrails, and templates.
+This is Part 1 of a five-part series on designing AI agent infrastructure. [Part 2]({% post_url 2026-08-22-context-is-a-budget-part-2 %}) covers context as a budget, [Part 3]({% post_url 2026-08-23-skills-are-not-prompts-part-3 %}) covers skills as capability packages, [Part 4]({% post_url 2026-08-29-stop-writing-prompts-start-writing-specifications-part-4 %}) covers specification-driven prompting, and [Part 5]({% post_url 2026-08-30-stop-writing-prompts-start-writing-specifications-part-5 %}) covers execution loops, guardrails, and templates.
 
 ## Context Is Temporary. Memory Is Persistent.
 
@@ -149,7 +149,7 @@ Relevant project constraints:
 - Authentication is handled by Keycloak.
 ```
 
-The raw memories remain stored; the model receives a concise summary. That dramatically reduces token usage and context pollution — a theme [Part 2]({% post_url 2026-09-06-context-is-a-budget-part-2 %}) develops further.
+The raw memories remain stored; the model receives a concise summary. That dramatically reduces token usage and context pollution — a theme [Part 2]({% post_url 2026-08-22-context-is-a-budget-part-2 %}) develops further.
 
 ## Forgetting, Handoffs, and Logs
 
@@ -181,7 +181,7 @@ Logs and memory serve different purposes, too. Logs answer *what happened*; memo
 
 A practical agent memory system could look like this:
 
-![The agent memory architecture: the user talks to the agent, which combines a short-lived working context with retrieval from an application-owned memory store holding user, project, decision, and agent memory.](/assets/posts/2026-09-05/ai-memory-architecture.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![The agent memory architecture: the user talks to the agent, which combines a short-lived working context with retrieval from an application-owned memory store holding user, project, decision, and agent memory.](/assets/posts/2026-08-16/ai-memory-architecture.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 The important point: the model does not directly own the memory — the application does. The LLM is still extremely useful inside this architecture. It can determine whether information is worth storing, what category it belongs to, which memories are relevant, whether memories contradict each other, how to summarize them, and whether new information supersedes old. After a session, the model could produce:
 
@@ -238,7 +238,7 @@ Building persistent AI agents is not primarily a prompt-engineering problem. It 
 
 ## References
 
-- [Part 2: Context Is a Budget]({% post_url 2026-09-06-context-is-a-budget-part-2 %})
-- [Part 3: Skills Are Not Prompts]({% post_url 2026-09-12-skills-are-not-prompts-part-3 %})
-- [Part 4: From Prompts to Specifications]({% post_url 2026-09-13-stop-writing-prompts-start-writing-specifications-part-4 %})
-- [Part 5: Loops, Guardrails, and Templates]({% post_url 2026-09-20-stop-writing-prompts-start-writing-specifications-part-5 %})
+- [Part 2: Context Is a Budget]({% post_url 2026-08-22-context-is-a-budget-part-2 %})
+- [Part 3: Skills Are Not Prompts]({% post_url 2026-08-23-skills-are-not-prompts-part-3 %})
+- [Part 4: From Prompts to Specifications]({% post_url 2026-08-29-stop-writing-prompts-start-writing-specifications-part-4 %})
+- [Part 5: Loops, Guardrails, and Templates]({% post_url 2026-08-30-stop-writing-prompts-start-writing-specifications-part-5 %})

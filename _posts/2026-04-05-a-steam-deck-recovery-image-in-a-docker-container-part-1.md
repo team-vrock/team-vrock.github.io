@@ -15,7 +15,7 @@ Valve publishes Steam Deck recovery images as raw `.img.bz2` disk images — the
 
 **TL;DR:** Decompress the image, parse the GPT table to find the `rootfs-A` partition, mount it via `udisksctl` (plain `mount -o offset` needs root), copy the tree out with a privileged helper container, `tar` it, and `docker import` the result. Along the way: two different permission walls, and a clear answer to "can the container use my GPU?"
 
-This is Part 1 of a two-part series. [Part 2]({% post_url 2026-04-19-a-steam-deck-recovery-image-in-a-docker-container-part-2 %}) covers what I built on top of it and why the daily driver eventually became a plain Tumbleweed image.
+This is Part 1 of a two-part series. [Part 2]({% post_url 2026-04-12-a-steam-deck-recovery-image-in-a-docker-container-part-2 %}) covers what I built on top of it and why the daily driver eventually became a plain Tumbleweed image.
 
 ## Overview
 
@@ -200,6 +200,6 @@ Twice, in different directions: host-side `cp` cannot read root-owned source fil
 
 ## References
 
-- [Part 2: From SteamOS Hack to a Tumbleweed Steam Container]({% post_url 2026-04-19-a-steam-deck-recovery-image-in-a-docker-container-part-2 %})
+- [Part 2: From SteamOS Hack to a Tumbleweed Steam Container]({% post_url 2026-04-12-a-steam-deck-recovery-image-in-a-docker-container-part-2 %})
 - [Steam Deck recovery images](https://store.steampowered.com/steamos/download)
 - [udisks2 documentation](https://github.com/storaged-project/udisks)

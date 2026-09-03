@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "From SteamOS Hack to a Tumbleweed Steam Container, Part 2"
-date: 2026-04-19 10:00:00 +0000
+date: 2026-04-12 10:00:00 +0000
 categories: post
 tags: [docker, steamos, steamdeck, opensuse, containers, gaming]
 author: Tobias Geiser
-image: "/assets/posts/2026-04-19/steam-deck-tumbleweed.png"
-header: "/assets/posts/2026-04-19/steam-deck-tumbleweed-header.png"
+image: "/assets/posts/2026-04-12/steam-deck-tumbleweed.png"
+header: "/assets/posts/2026-04-12/steam-deck-tumbleweed-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -109,7 +109,7 @@ It drops Proton-GE into Steam's compatibility-tools directory inside the contain
 
 ### Keep the CA certificate story consistent
 
-If your network intercepts TLS (see [my DevOps container post]({% post_url 2026-06-14-a-minimal-tumbleweed-devops-tools-container %}) for the same problem), put your PEM files in `cacerts/` or point `EXTRA_CA_CERT_DIR` at them. `run.sh` injects them into the container trust store at startup — Steam's downloads and logins then survive TLS-intercepting proxies.
+If your network intercepts TLS (see [my DevOps container post]({% post_url 2026-05-31-a-minimal-tumbleweed-devops-tools-container %}) for the same problem), put your PEM files in `cacerts/` or point `EXTRA_CA_CERT_DIR` at them. `run.sh` injects them into the container trust store at startup — Steam's downloads and logins then survive TLS-intercepting proxies.
 
 ## Troubleshooting
 

@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Tuning a Windows 11 KVM Guest for Pro Audio, Part 2: Pinning, Passthrough, and RDP"
-date: 2026-05-03 10:00:00 +0000
+date: 2026-04-26 10:00:00 +0000
 categories: post
 tags: [kvm, libvirt, windows, opensuse, virtualization, qemu, audio]
 author: Tobias Geiser
-image: "/assets/posts/2026-05-03/kvm-rdp-proaudio.png"
-header: "/assets/posts/2026-05-03/kvm-proaudio-header.png"
+image: "/assets/posts/2026-04-26/kvm-rdp-proaudio.png"
+header: "/assets/posts/2026-04-26/kvm-proaudio-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -31,7 +31,7 @@ Three decisions shape everything else:
 2. **RDP carries video and input only.** Audio stays local to the VM: it plays out of the passed-through interface, not through the RDP audio channel.
 3. **The host stays the display machine.** SPICE remains as an emergency console; nothing audio-critical depends on it.
 
-![Pro audio KVM virtualization architecture: Linux host kernel isolation, dedicated CPU pinning, VFIO USB controller passthrough, Windows guest DAW, and low-latency RDP display.](/assets/posts/2026-05-03/kvm-audio-architecture.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![Pro audio KVM virtualization architecture: Linux host kernel isolation, dedicated CPU pinning, VFIO USB controller passthrough, Windows guest DAW, and low-latency RDP display.](/assets/posts/2026-04-26/kvm-audio-architecture.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 ## Prerequisites
 

@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Skills Are Not Prompts, Part 3: Designing a Dynamic Capability System for AI Agents"
-date: 2026-09-12 10:00:00 +0000
+date: 2026-08-23 10:00:00 +0000
 categories: post
 tags: [ai, ai-agents, llm, agents, architecture]
 author: Tobias Geiser
-image: "/assets/posts/2026-09-12/ai-robot.png"
-header: "/assets/posts/2026-09-12/ai-robot-header.png"
+image: "/assets/posts/2026-08-23/ai-robot.png"
+header: "/assets/posts/2026-08-23/ai-robot-header.png"
 excerpt_separator: <!--more-->
 ---
 
@@ -15,7 +15,7 @@ Many AI agent frameworks describe skills as reusable prompts. That is useful —
 
 **TL;DR:** A skill should tell the runtime how to prepare the environment — which tools to activate, which permissions to grant, which context to retrieve — not just how the model should behave. Skills need discovery, dynamic loading and unloading, dependencies, scopes, versioning, validation, budgets, conflict resolution, and trust boundaries. Think packages, not prompts.
 
-This is Part 3 of a five-part series on designing AI agent infrastructure. [Part 1]({% post_url 2026-09-05-llm-memory-is-not-chat-history-part-1 %}) covered persistent memory and [Part 2]({% post_url 2026-09-06-context-is-a-budget-part-2 %}) covered context as a budget; [Part 4]({% post_url 2026-09-13-stop-writing-prompts-start-writing-specifications-part-4 %}) covers specification-driven prompting and [Part 5]({% post_url 2026-09-20-stop-writing-prompts-start-writing-specifications-part-5 %}) covers execution loops, guardrails, and templates.
+This is Part 3 of a five-part series on designing AI agent infrastructure. [Part 1]({% post_url 2026-08-16-llm-memory-is-not-chat-history-part-1 %}) covered persistent memory and [Part 2]({% post_url 2026-08-22-context-is-a-budget-part-2 %}) covered context as a budget; [Part 4]({% post_url 2026-08-29-stop-writing-prompts-start-writing-specifications-part-4 %}) covers specification-driven prompting and [Part 5]({% post_url 2026-08-30-stop-writing-prompts-start-writing-specifications-part-5 %}) covers execution loops, guardrails, and templates.
 
 ## The Problem With Prompt-Only Skills
 
@@ -206,7 +206,7 @@ One implementation mistake to avoid:
 load skill -> append skill prompt to conversation
 ```
 
-Now the skill stays in context forever, even when it is no longer active. Skill instructions should be part of the dynamically assembled prompt — system, active profile, active skills, task state, relevant memory, current conversation — rebuilt on every turn. If a skill is no longer active, it simply disappears. [Part 2]({% post_url 2026-09-06-context-is-a-budget-part-2 %}) covers that rebuild in depth.
+Now the skill stays in context forever, even when it is no longer active. Skill instructions should be part of the dynamically assembled prompt — system, active profile, active skills, task state, relevant memory, current conversation — rebuilt on every turn. If a skill is no longer active, it simply disappears. [Part 2]({% post_url 2026-08-22-context-is-a-budget-part-2 %}) covers that rebuild in depth.
 
 ## Selection: Rules Plus Model Ranking
 
@@ -237,7 +237,7 @@ If the skill needs more information, it should retrieve incrementally. Documenta
 
 The analogy becomes obvious. A skill has a name, version, dependencies, configuration, permissions, capabilities, and documentation. It can be installed, discovered, loaded, unloaded, updated, overridden, and validated. That suggests agent skills eventually need the same infrastructure software packages already have: registries, dependency locking, signatures, compatibility checks.
 
-![AI skill capability package lifecycle: discovery catalog, dynamic activation, scoped tools and permissions, token budgeting, and sandboxed execution.](/assets/posts/2026-09-12/ai-skill-lifecycle.png){: style="max-width: 100%; min-width: 100%; height: auto"}
+![AI skill capability package lifecycle: discovery catalog, dynamic activation, scoped tools and permissions, token budgeting, and sandboxed execution.](/assets/posts/2026-08-23/ai-skill-lifecycle.png){: style="max-width: 100%; min-width: 100%; height: auto"}
 
 Security comes with that. Installing a skill is potentially more dangerous than installing documentation — a skill might request shell access, filesystem writes, cloud access, or production Kubernetes access. A runtime should show exactly what capability the user is enabling:
 
@@ -277,7 +277,7 @@ Policy resolution is testable the same way: workspace says `auto_commit: false`,
 
 ## Skill Versus Agent Versus Tool
 
-The distinctions can now be stated clearly. An agent defines *who is acting*. A skill defines *what the agent can do*. A tool defines *how an action is executed*. Memory defines *what the system remembers*. Context defines *what the agent knows right now* — see [Part 1]({% post_url 2026-09-05-llm-memory-is-not-chat-history-part-1 %}) and [Part 2]({% post_url 2026-09-06-context-is-a-budget-part-2 %}). These concepts overlap, and they should not be collapsed into one giant prompt.
+The distinctions can now be stated clearly. An agent defines *who is acting*. A skill defines *what the agent can do*. A tool defines *how an action is executed*. Memory defines *what the system remembers*. Context defines *what the agent knows right now* — see [Part 1]({% post_url 2026-08-16-llm-memory-is-not-chat-history-part-1 %}) and [Part 2]({% post_url 2026-08-22-context-is-a-budget-part-2 %}). These concepts overlap, and they should not be collapsed into one giant prompt.
 
 A request moves through the runtime like this:
 
@@ -298,7 +298,7 @@ Calling a reusable prompt a skill is fine for simple systems. But once agents be
 
 ## References
 
-- [Part 1: LLM Memory Is Not Chat History]({% post_url 2026-09-05-llm-memory-is-not-chat-history-part-1 %})
-- [Part 2: Context Is a Budget]({% post_url 2026-09-06-context-is-a-budget-part-2 %})
-- [Part 4: From Prompts to Specifications]({% post_url 2026-09-13-stop-writing-prompts-start-writing-specifications-part-4 %})
-- [Part 5: Loops, Guardrails, and Templates]({% post_url 2026-09-20-stop-writing-prompts-start-writing-specifications-part-5 %})
+- [Part 1: LLM Memory Is Not Chat History]({% post_url 2026-08-16-llm-memory-is-not-chat-history-part-1 %})
+- [Part 2: Context Is a Budget]({% post_url 2026-08-22-context-is-a-budget-part-2 %})
+- [Part 4: From Prompts to Specifications]({% post_url 2026-08-29-stop-writing-prompts-start-writing-specifications-part-4 %})
+- [Part 5: Loops, Guardrails, and Templates]({% post_url 2026-08-30-stop-writing-prompts-start-writing-specifications-part-5 %})
