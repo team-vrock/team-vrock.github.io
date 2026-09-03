@@ -37,7 +37,7 @@ jobs:
       - name: Build with Jekyll
         env:
           JEKYLL_ENV: production
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --future
 
       - name: Upload Pages artifact
         if: github.event_name == 'push'
