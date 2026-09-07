@@ -1,0 +1,48 @@
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li>
+      <a href="{{ '/' | relative_url }}">Home</a>
+    </li>
+
+    {% if page.layout == 'post' %}
+      {% assign primary_topic = page.primary_topic | default: page.topics.first %}
+      {% assign topic_data = site.data.topics | where: "id", primary_topic | first %}
+      {% if topic_data %}
+        <li>
+          <a href="{{ topic_data.url | relative_url }}">{{ topic_data.title }}</a>
+        </li>
+      {% endif %}
+    {% endif %}
+
+    <li aria-current="page">{{ page.title }}</li>
+  </ol>
+</nav>
+<style>
+  .breadcrumbs {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .breadcrumbs li + li::before {
+    content: "›";
+    margin-right: 0.4rem;
+    color: var(--muted-color, var(--sec-color));
+  }
+  .breadcrumbs a {
+    color: var(--accent-cyan, #16c7d4);
+    text-decoration: none;
+  }
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+  .breadcrumbs [aria-current="page"] {
+    color: var(--text-color);
+  }
+</style>

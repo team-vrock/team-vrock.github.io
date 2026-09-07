@@ -1,0 +1,33 @@
+{% assign bc_primary_topic = page.primary_topic | default: page.topics.first %}
+{% assign bc_topic_data = nil %}
+{% if bc_primary_topic %}
+  {% assign bc_topic_data = site.data.topics | where: "id", bc_primary_topic | first %}
+{% endif %}
+{% if bc_topic_data or page.layout == 'topic' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "TEAM VROCK",
+      "item": {{ '/' | absolute_url | jsonify }}
+    }{% if bc_topic_data %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ bc_topic_data.title | jsonify }},
+      "item": {{ bc_topic_data.url | absolute_url | jsonify }}
+    }{% endif %},
+    {
+      "@type": "ListItem",
+      "position": {% if bc_topic_data %}3{% else %}2{% endif %},
+      "name": {{ page.title | jsonify }},
+      "item": {{ page.url | absolute_url | jsonify }}
+    }
+  ]
+}
+</script>
+{% endif %}

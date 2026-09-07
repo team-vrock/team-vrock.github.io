@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
+{% include breadcrumb-jsonld.html %}
 <body>
   {% include navigation.html %}
 
   <main id="content">
   <article id="posts" class="post-layout topic-layout">
+    {% include breadcrumbs.html %}
     <style>
       .topic-layout .post-header {
         margin-bottom: 2rem;
