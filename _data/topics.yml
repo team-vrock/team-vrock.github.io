@@ -1,0 +1,34 @@
+- id: linux-opensuse
+  title: "Linux & openSUSE"
+  url: "/topics/linux-opensuse/"
+  description: >-
+    openSUSE image builds, KVM and QEMU guest tuning, kernel enablement,
+    packaging and hands-on system-level Linux engineering.
+
+- id: containers
+  title: "Containers & Virtualization"
+  url: "/topics/containers/"
+  description: >-
+    Docker workflows and virtualization: SteamOS recovery containers,
+    minimal DevOps tooling images, ROCm container setups and KVM guests.
+
+- id: ai-llms
+  title: "AI & LLMs"
+  url: "/topics/ai-llms/"
+  description: >-
+    Practical AI engineering: ROCm GPU inference, agent memory design,
+    context budgets, coding agents and specification-driven workflows.
+
+- id: cloud-devops
+  title: "Cloud & DevOps"
+  url: "/topics/cloud-devops/"
+  description: >-
+    Azure landing zones with Terraform, GitHub Actions pipelines,
+    OBS RPM packaging automation and secure engineering workflows.
+
+- id: networking-hardware
+  title: "Networking & Hardware"
+  url: "/topics/networking-hardware/"
+  description: >-
+    Banana Pi BPI-R4 routers, openSUSE on ARM boards, open switching
+    and home lab hardware experiments.

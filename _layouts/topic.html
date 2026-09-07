@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+  {% include navigation.html %}
+
+  <main id="content">
+  <article id="posts" class="post-layout topic-layout">
+    <style>
+      .topic-layout .post-header {
+        margin-bottom: 2rem;
+      }
+      .topic-intro {
+        max-width: 65ch;
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+      .topic-chip-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+      .topic-chip {
+        padding: 0.9rem 1.2rem;
+        color: var(--heading-color);
+        background: var(--card-color);
+        border: 1px solid var(--border-color, rgba(124, 92, 255, 0.2));
+        border-radius: 12px;
+        box-shadow: 0 6px 20px var(--shadow-color);
+      }
+      .topic-chip:hover {
+        color: var(--accent-cyan, #16c7d4);
+      }
+    </style>
+    <header class="post-header">
+      <p class="section-kicker">Topic</p>
+      <h1>{{ page.title }}</h1>
+      <p class="topic-intro">{{ page.description }}</p>
+    </header>
+
+    {% assign topic_posts = site.posts | where_exp: "post", "post.topics contains page.topic" %}
+    <section>
+      <h2>Latest {{ page.title }} posts</h2>
+
+      {% for post in topic_posts %}
+      <article class="user-projects post-card{% unless post.image %} post-card-no-image{% endunless %}">
+        <h3 class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        {% if post.image %}
+        <div class="images-left">
+          <img alt="" src="{{ post.image | relative_url }}" loading="lazy">
+          <p class="post-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></p>
+        </div>
+        {% endif %}
+        <div class="contents-right">
+          {% unless post.image %}
+          <p class="post-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></p>
+          {% endunless %}
+          <p>{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 180 }}</p>
+          <a class="project-link" href="{{ post.url | relative_url }}">Read post</a>
+        </div>
+      </article>
+      {% else %}
+      <p>Posts for this topic are on their way.</p>
+      {% endfor %}
+    </section>
+
+    <section>
+      <h2>Related topics</h2>
+      <div class="topic-chip-grid">
+        {% for topic in site.data.topics %}
+        {% unless topic.id == page.topic %}
+        <a class="topic-chip" href="{{ topic.url | relative_url }}">{{ topic.title }}</a>
+        {% endunless %}
+        {% endfor %}
+      </div>
+    </section>
+  </article>
+  </main>
+  {% include footer.html %}
+  {% include cookie-consent.html %}
+
+</body>
+</html>
