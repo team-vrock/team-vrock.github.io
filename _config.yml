@@ -1,6 +1,8 @@
 # Site settings
 title: TEAM VROCK
 description: "TEAM VROCK publishes technical guidance, engineering notes, and selected project work."
+url: "https://www.vrock.ch"
+lang: en
 
 # User settings
 username: TEAM VROCK
