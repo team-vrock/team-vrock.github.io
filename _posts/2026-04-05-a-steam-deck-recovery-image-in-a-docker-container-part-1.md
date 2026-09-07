@@ -2,6 +2,14 @@
 layout: post
 title: "Turning a Steam Deck Recovery Image into a Docker Container, Part 1"
 date: 2026-04-05 10:00:00 +0000
+
+description: >-
+  Turn the Steam Deck recovery image into a Docker container on openSUSE: extracting SteamOS and running it outside the device.
+
+topics:
+  - containers
+  - linux-opensuse
+primary_topic: containers
 categories: post
 tags: [docker, steamos, steamdeck, opensuse, containers, gaming]
 author: Tobias Geiser

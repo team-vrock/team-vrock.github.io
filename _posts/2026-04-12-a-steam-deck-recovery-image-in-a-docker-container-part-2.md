@@ -2,6 +2,14 @@
 layout: post
 title: "From SteamOS Hack to a Tumbleweed Steam Container, Part 2"
 date: 2026-04-12 10:00:00 +0000
+
+description: >-
+  From SteamOS hacks to a clean Tumbleweed Steam container: a reproducible gaming container build with GPU access on openSUSE.
+
+topics:
+  - containers
+  - linux-opensuse
+primary_topic: containers
 categories: post
 tags: [docker, steamos, steamdeck, opensuse, containers, gaming]
 author: Tobias Geiser

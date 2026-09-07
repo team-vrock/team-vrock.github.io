@@ -2,6 +2,13 @@
 layout: post
 title: "An Azure Landing Zone Built from Solutions, Part 1: Architecture"
 date: 2026-07-12 10:00:00 +0000
+
+description: >-
+  Architecture for an Azure landing zone assembled from reusable solution modules: management groups, connectivity, identity and guardrails.
+
+topics:
+  - cloud-devops
+primary_topic: cloud-devops
 categories: post
 tags: [azure, terraform, opentofu, landing-zone, iac, cloud, github-actions, ci]
 author: Tobias Geiser

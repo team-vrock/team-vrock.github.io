@@ -2,6 +2,15 @@
 layout: post
 title: "Building a Lab Router with Banana Pi BPI-R4 and Cobanero"
 date: 2026-06-28 10:00:00 +0000
+
+description: >-
+  Build a home lab router on Banana Pi BPI-R4 with the Cobanero switch board: openSUSE, Open vSwitch and containerized networking.
+
+topics:
+  - networking-hardware
+  - linux-opensuse
+  - containers
+primary_topic: networking-hardware
 categories: post
 image: "/assets/posts/2026-06-28/cobanero.png"
 header: "/assets/posts/2026-06-28/cobanero-header.png"

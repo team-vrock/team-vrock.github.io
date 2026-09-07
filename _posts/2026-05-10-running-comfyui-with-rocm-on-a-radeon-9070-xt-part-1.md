@@ -2,6 +2,14 @@
 layout: post
 title: "Running ComfyUI with ROCm on a Radeon 9070 XT, Part 1: A Working Docker Setup"
 date: 2026-05-10 10:00:00 +0000
+
+description: >-
+  A working Docker setup for ComfyUI with ROCm on a Radeon 9070 XT: image build, device access and first image generation runs.
+
+topics:
+  - ai-llms
+  - containers
+primary_topic: ai-llms
 categories: post
 tags: [rocm, amdgpu, comfyui, docker, opensuse, ai]
 author: Tobias Geiser

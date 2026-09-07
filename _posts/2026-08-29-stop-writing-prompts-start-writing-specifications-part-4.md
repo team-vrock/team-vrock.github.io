@@ -2,6 +2,13 @@
 layout: post
 title: "Stop Writing Prompts, Part 4: From Prompts to Specifications"
 date: 2026-08-29 10:00:00 +0000
+
+description: >-
+  Move from prompts to specifications for agent work: turning intents into testable acceptance criteria and living implementation specs.
+
+topics:
+  - ai-llms
+primary_topic: ai-llms
 categories: post
 tags: [ai, ai-agents, llm, agents, architecture]
 author: Tobias Geiser

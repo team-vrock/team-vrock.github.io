@@ -2,6 +2,13 @@
 layout: post
 title: "An Azure Landing Zone Built from Solutions, Part 2: Dependency-Ordered CI"
 date: 2026-07-19 10:00:00 +0000
+
+description: >-
+  Dependency-ordered CI for an Azure landing zone: GitHub Actions pipelines that deploy Terraform modules in the right sequence.
+
+topics:
+  - cloud-devops
+primary_topic: cloud-devops
 categories: post
 tags: [azure, terraform, opentofu, landing-zone, iac, cloud, github-actions, ci]
 author: Tobias Geiser

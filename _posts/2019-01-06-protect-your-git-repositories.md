@@ -2,6 +2,13 @@
 layout: post
 title: "Protect your Git repositories"
 date: 2019-01-06 14:54:00 +0100
+
+description: >-
+  Practical steps to harden Git repositories: signed commits with GPG, SSH key hygiene and access control across GitHub and GitLab.
+
+topics:
+  - cloud-devops
+primary_topic: cloud-devops
 categories: post
 image: "/assets/posts/2019-01-06/git-repo-sec.png"
 header: "/assets/posts/2019-01-06/git-security-header.png"

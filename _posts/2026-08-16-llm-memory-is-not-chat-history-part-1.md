@@ -2,6 +2,13 @@
 layout: post
 title: "LLM Memory Is Not Chat History, Part 1: Designing Memory for AI Agents"
 date: 2026-08-16 10:00:00 +0000
+
+description: >-
+  Designing memory for AI agents: why chat history is not memory, and how to structure working, episodic and semantic memory layers.
+
+topics:
+  - ai-llms
+primary_topic: ai-llms
 categories: post
 tags: [ai, ai-agents, llm, agents, architecture]
 author: Tobias Geiser

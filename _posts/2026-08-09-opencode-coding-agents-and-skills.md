@@ -2,6 +2,13 @@
 layout: post
 title: "Repeatable Engineering with OpenCode Agents and Skills"
 date: 2026-08-09 10:00:00 +0000
+
+description: >-
+  Repeatable engineering with OpenCode coding agents: structuring skills, checklists and living specs so agent output stays consistent.
+
+topics:
+  - ai-llms
+primary_topic: ai-llms
 categories: post
 tags: [opencode, ai-agents, coding, skills, automation, documentation]
 author: Tobias Geiser

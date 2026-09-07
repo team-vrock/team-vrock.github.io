@@ -2,6 +2,14 @@
 layout: post
 title: "Tuning a Windows 11 KVM Guest, Part 1: Performance Baseline and Modular QEMU"
 date: 2026-03-29 10:00:00 +0000
+
+description: >-
+  Baseline a Windows 11 KVM guest on openSUSE with modular QEMU: measurement setup, virtio drivers and a reference before tuning.
+
+topics:
+  - containers
+  - linux-opensuse
+primary_topic: containers
 categories: post
 tags: [kvm, libvirt, windows, opensuse, virtualization, qemu, audio]
 author: Tobias Geiser

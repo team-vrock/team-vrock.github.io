@@ -2,6 +2,13 @@
 layout: post
 title: "Skills Are Not Prompts, Part 3: Designing a Dynamic Capability System for AI Agents"
 date: 2026-08-23 10:00:00 +0000
+
+description: >-
+  A dynamic capability system for AI agents: separating skills from prompts so agents load the right procedures at the right time.
+
+topics:
+  - ai-llms
+primary_topic: ai-llms
 categories: post
 tags: [ai, ai-agents, llm, agents, architecture]
 author: Tobias Geiser

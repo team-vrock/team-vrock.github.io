@@ -2,6 +2,14 @@
 layout: post
 title: "From Pull Request to Package: RPM Builds with GitHub Actions and OBS"
 date: 2026-07-26 10:00:00 +0000
+
+description: >-
+  Automate RPM packaging from pull request to published package using GitHub Actions and the Open Build Service, with review gates.
+
+topics:
+  - cloud-devops
+  - linux-opensuse
+primary_topic: cloud-devops
 categories: post
 tags: [opensuse, obs, rpm, github, ci, packaging, automation]
 author: Tobias Geiser

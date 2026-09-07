@@ -2,6 +2,13 @@
 layout: post
 title: "Context Is a Budget, Part 2: Designing Efficient AI Agent Context"
 date: 2026-08-22 10:00:00 +0000
+
+description: >-
+  Treat agent context as a budget: packing strategies, token costs and selection rules that keep AI agents effective in their window.
+
+topics:
+  - ai-llms
+primary_topic: ai-llms
 categories: post
 tags: [ai, ai-agents, llm, agents, architecture]
 author: Tobias Geiser

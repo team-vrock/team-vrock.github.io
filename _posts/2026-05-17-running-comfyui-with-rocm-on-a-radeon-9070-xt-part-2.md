@@ -2,6 +2,14 @@
 layout: post
 title: "Running ComfyUI with ROCm on a Radeon 9070 XT, Part 2: Training Crashes and a ROCm Downgrade"
 date: 2026-05-17 10:00:00 +0000
+
+description: >-
+  Debugging training crashes in ComfyUI on RDNA GPUs: HIP error traces, a pragmatic ROCm downgrade and what stabilized the workflow.
+
+topics:
+  - ai-llms
+  - containers
+primary_topic: ai-llms
 categories: post
 tags: [rocm, amdgpu, comfyui, docker, opensuse, ai]
 author: Tobias Geiser

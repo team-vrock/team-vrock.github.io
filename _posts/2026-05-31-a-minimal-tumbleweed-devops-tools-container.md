@@ -2,6 +2,14 @@
 layout: post
 title: "A Minimal Tumbleweed DevOps Tools Container"
 date: 2026-05-31 10:00:00 +0000
+
+description: >-
+  A minimal Tumbleweed-based DevOps tools container with Terraform and friends: small, reproducible and ready for local and CI use.
+
+topics:
+  - containers
+  - cloud-devops
+primary_topic: containers
 categories: post
 tags: [opensuse, docker, devops, terraform, tooling]
 author: Tobias Geiser

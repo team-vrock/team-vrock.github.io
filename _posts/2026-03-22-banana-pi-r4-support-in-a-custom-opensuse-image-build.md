@@ -2,6 +2,14 @@
 layout: post
 title: "Bringing Banana Pi R4 Support into a Custom openSUSE Image Build"
 date: 2026-03-22 10:00:00 +0000
+
+description: >-
+  Adding Banana Pi R4 support to a custom openSUSE image build: kernel packaging, ARM enablement and reproducible image delivery.
+
+topics:
+  - linux-opensuse
+  - networking-hardware
+primary_topic: linux-opensuse
 categories: post
 tags: [opensuse, bananapi, kernel, arm, embedded, build]
 author: Tobias Geiser

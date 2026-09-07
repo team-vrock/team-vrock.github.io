@@ -2,6 +2,13 @@
 layout: post
 title: "Install Jekyll with rbenv on Linux"
 date: 2026-06-14 10:00:00 +0000
+
+description: >-
+  Set up Jekyll with rbenv on Linux: step-by-step instructions covering openSUSE, Debian, Ubuntu, Red Hat and Arch dependencies.
+
+topics:
+  - linux-opensuse
+primary_topic: linux-opensuse
 categories: post
 image: "/assets/posts/2026-06-14/rbenv-linux.png"
 header: "/assets/posts/2026-06-14/rbenv-linux-header.png"

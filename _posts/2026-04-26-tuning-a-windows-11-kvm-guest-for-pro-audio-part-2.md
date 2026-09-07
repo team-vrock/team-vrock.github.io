@@ -2,6 +2,14 @@
 layout: post
 title: "Tuning a Windows 11 KVM Guest for Pro Audio, Part 2: Pinning, Passthrough, and RDP"
 date: 2026-04-26 10:00:00 +0000
+
+description: >-
+  Tune a Windows 11 KVM guest for pro audio: CPU pinning, USB and GPU passthrough, latency-friendly RDP and low-jitter audio.
+
+topics:
+  - containers
+  - linux-opensuse
+primary_topic: containers
 categories: post
 tags: [kvm, libvirt, windows, opensuse, virtualization, qemu, audio]
 author: Tobias Geiser

@@ -2,6 +2,13 @@
 layout: post
 title: "Stop Writing Prompts, Part 5: Loops, Guardrails, and Templates"
 date: 2026-08-30 10:00:00 +0000
+
+description: >-
+  Agent loops, guardrails and templates: practical patterns that keep specification-driven AI agents on track through long tasks.
+
+topics:
+  - ai-llms
+primary_topic: ai-llms
 categories: post
 tags: [ai, ai-agents, llm, agents, architecture]
 author: Tobias Geiser
