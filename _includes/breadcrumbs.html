@@ -1,7 +1,9 @@
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <ol>
     <li>
-      <a href="{{ '/' | relative_url }}">Home</a>
+      <a class="breadcrumb-home" href="{{ '/' | relative_url }}" aria-label="Home">
+        <i class="fas fa-house" aria-hidden="true"></i>
+      </a>
     </li>
 
     {% if page.layout == 'post' %}
@@ -19,30 +21,74 @@
 </nav>
 <style>
   .breadcrumbs {
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
+    margin-bottom: 1.75rem;
+    font-size: 0.85rem;
   }
   .breadcrumbs ol {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    align-items: center;
+    gap: 0.55rem;
+    width: fit-content;
+    max-width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0.4rem 1rem;
     list-style: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+  }
+  .breadcrumbs li {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-width: 0;
   }
   .breadcrumbs li + li::before {
     content: "›";
-    margin-right: 0.4rem;
-    color: var(--muted-color, var(--sec-color));
+    color: rgba(255, 255, 255, 0.35);
   }
   .breadcrumbs a {
-    color: var(--accent-cyan, #16c7d4);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #fff;
+    opacity: 0.82;
     text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
   }
   .breadcrumbs a:hover {
-    text-decoration: underline;
+    color: var(--accent-cyan, #16c7d4);
+    opacity: 1;
+  }
+  .breadcrumbs a .fa-house {
+    font-size: 0.8em;
+    transform: translateY(1px);
   }
   .breadcrumbs [aria-current="page"] {
-    color: var(--text-color);
+    color: #fff;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 58ch;
+  }
+  [data-theme="light"] .breadcrumbs ol,
+  :root:not([data-theme="dark"]) .breadcrumbs ol {
+    color: var(--heading-color);
+    background: rgba(18, 24, 38, 0.04);
+    border-color: rgba(18, 24, 38, 0.12);
+  }
+  [data-theme="light"] .breadcrumbs li + li::before,
+  :root:not([data-theme="dark"]) .breadcrumbs li + li::before {
+    color: rgba(18, 24, 38, 0.35);
+  }
+  [data-theme="light"] .breadcrumbs a,
+  [data-theme="light"] .breadcrumbs [aria-current="page"],
+  :root:not([data-theme="dark"]) .breadcrumbs a,
+  :root:not([data-theme="dark"]) .breadcrumbs [aria-current="page"] {
+    color: var(--heading-color);
   }
 </style>
