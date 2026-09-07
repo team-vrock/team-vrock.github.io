@@ -29,16 +29,13 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 0.55rem;
-    width: fit-content;
     max-width: 100%;
     margin: 0;
-    padding: 0.4rem 1rem;
+    padding: 0;
     list-style: none;
     color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    border-radius: 999px;
-    backdrop-filter: blur(4px);
+    background: transparent;
+    border: none;
   }
   .breadcrumbs li {
     display: flex;
@@ -78,8 +75,6 @@
   [data-theme="light"] .breadcrumbs ol,
   :root:not([data-theme="dark"]) .breadcrumbs ol {
     color: var(--heading-color);
-    background: rgba(18, 24, 38, 0.04);
-    border-color: rgba(18, 24, 38, 0.12);
   }
   [data-theme="light"] .breadcrumbs li + li::before,
   :root:not([data-theme="dark"]) .breadcrumbs li + li::before {
