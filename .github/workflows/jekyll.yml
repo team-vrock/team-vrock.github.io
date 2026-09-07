@@ -39,6 +39,9 @@ jobs:
           JEKYLL_ENV: production
         run: bundle exec jekyll build
 
+      - name: Run SEO checks
+        run: scripts/check-seo.sh
+
       - name: Upload Pages artifact
         if: github.event_name == 'push'
         uses: actions/upload-pages-artifact@v3
