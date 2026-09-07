@@ -6,3 +6,50 @@ description: >-
   platforms and Azure landing zones, DevOps and platform engineering,
   openSUSE packaging, and AI agents and LLMs.
 ---
+
+<section class="site-section" id="topics" aria-labelledby="topics-title">
+  <div class="section-heading">
+    <p class="section-kicker">Topics</p>
+    <h2 id="topics-title">Explore topics</h2>
+    <p>Pick a topic to browse related posts.</p>
+  </div>
+  <div class="topic-chip-grid">
+    {% for topic in site.data.topics %}
+    <article class="topic-card">
+      <h3><a class="topic-card-link" href="{{ topic.url | relative_url }}">{{ topic.title }}</a></h3>
+      <p>{{ topic.description }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+<style>
+  #topics .topic-chip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+  #topics .topic-card {
+    padding: 1.25rem 1.4rem;
+    background: var(--card-color);
+    border: 1px solid var(--border-color, rgba(124, 92, 255, 0.2));
+    border-radius: 12px;
+    box-shadow: 0 8px 28px var(--shadow-color);
+  }
+  #topics .topic-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  #topics .topic-card h3 a {
+    color: var(--heading-color);
+    text-decoration: none;
+  }
+  #topics .topic-card h3 a:hover {
+    color: var(--accent-cyan, #16c7d4);
+  }
+  #topics .topic-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+</style>
